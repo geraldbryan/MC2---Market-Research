@@ -19,6 +19,9 @@
 		90CCD54E28545D6D008D4F9A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD54C28545D6D008D4F9A /* TableViewCell.swift */; };
 		90CCD54F28545D6D008D4F9A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CCD54D28545D6D008D4F9A /* TableViewCell.xib */; };
 		90CCD55228546CB0008D4F9A /* March.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD55028546CB0008D4F9A /* March.xcdatamodeld */; };
+		90CCD5562854CB85008D4F9A /* NewResearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD5552854CB85008D4F9A /* NewResearch.swift */; };
+		90CCD5592854E3F6008D4F9A /* Research+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD5572854E3F6008D4F9A /* Research+CoreDataClass.swift */; };
+		90CCD55A2854E3F6008D4F9A /* Research+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD5582854E3F6008D4F9A /* Research+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		90CCD54C28545D6D008D4F9A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		90CCD54D28545D6D008D4F9A /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		90CCD55128546CB0008D4F9A /* March.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = March.xcdatamodel; sourceTree = "<group>"; };
+		90CCD5552854CB85008D4F9A /* NewResearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewResearch.swift; sourceTree = "<group>"; };
+		90CCD5572854E3F6008D4F9A /* Research+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Research+CoreDataClass.swift"; sourceTree = "<group>"; };
+		90CCD5582854E3F6008D4F9A /* Research+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Research+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 				90A2DE8D284E533D00B8F876 /* AppDelegate.swift */,
 				90A2DE8F284E533D00B8F876 /* SceneDelegate.swift */,
 				90A2DE91284E533D00B8F876 /* ViewController.swift */,
+				90CCD5552854CB85008D4F9A /* NewResearch.swift */,
 				90A2DE93284E533D00B8F876 /* Main.storyboard */,
 				90CCD54C28545D6D008D4F9A /* TableViewCell.swift */,
 				90CCD54D28545D6D008D4F9A /* TableViewCell.xib */,
@@ -157,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				90CCD55028546CB0008D4F9A /* March.xcdatamodeld */,
+				90CCD5582854E3F6008D4F9A /* Research+CoreDataProperties.swift */,
+				90CCD5572854E3F6008D4F9A /* Research+CoreDataClass.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,9 +311,12 @@
 			files = (
 				90A2DE92284E533D00B8F876 /* ViewController.swift in Sources */,
 				90CCD54E28545D6D008D4F9A /* TableViewCell.swift in Sources */,
+				90CCD5592854E3F6008D4F9A /* Research+CoreDataClass.swift in Sources */,
 				90A2DE8E284E533D00B8F876 /* AppDelegate.swift in Sources */,
+				90CCD55A2854E3F6008D4F9A /* Research+CoreDataProperties.swift in Sources */,
 				90CCD55228546CB0008D4F9A /* March.xcdatamodeld in Sources */,
 				90A2DE90284E533D00B8F876 /* SceneDelegate.swift in Sources */,
+				90CCD5562854CB85008D4F9A /* NewResearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
