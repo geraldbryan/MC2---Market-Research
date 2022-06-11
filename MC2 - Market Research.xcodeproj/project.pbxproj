@@ -11,12 +11,14 @@
 		90A2DE90284E533D00B8F876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A2DE8F284E533D00B8F876 /* SceneDelegate.swift */; };
 		90A2DE92284E533D00B8F876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A2DE91284E533D00B8F876 /* ViewController.swift */; };
 		90A2DE95284E533D00B8F876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A2DE93284E533D00B8F876 /* Main.storyboard */; };
-		90A2DE98284E533D00B8F876 /* MC2___Market_Research.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90A2DE96284E533D00B8F876 /* MC2___Market_Research.xcdatamodeld */; };
 		90A2DE9A284E534000B8F876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A2DE99284E534000B8F876 /* Assets.xcassets */; };
 		90A2DE9D284E534000B8F876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A2DE9B284E534000B8F876 /* LaunchScreen.storyboard */; };
 		90A2DEA8284E534000B8F876 /* MC2___Market_ResearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A2DEA7284E534000B8F876 /* MC2___Market_ResearchTests.swift */; };
 		90A2DEB2284E534000B8F876 /* MC2___Market_ResearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A2DEB1284E534000B8F876 /* MC2___Market_ResearchUITests.swift */; };
 		90A2DEB4284E534000B8F876 /* MC2___Market_ResearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A2DEB3284E534000B8F876 /* MC2___Market_ResearchUITestsLaunchTests.swift */; };
+		90CCD54E28545D6D008D4F9A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD54C28545D6D008D4F9A /* TableViewCell.swift */; };
+		90CCD54F28545D6D008D4F9A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CCD54D28545D6D008D4F9A /* TableViewCell.xib */; };
+		90CCD55228546CB0008D4F9A /* March.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD55028546CB0008D4F9A /* March.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,6 @@
 		90A2DE8F284E533D00B8F876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		90A2DE91284E533D00B8F876 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90A2DE94284E533D00B8F876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		90A2DE97284E533D00B8F876 /* MC2___Market_Research.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MC2___Market_Research.xcdatamodel"; sourceTree = "<group>"; };
 		90A2DE99284E534000B8F876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A2DE9C284E534000B8F876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90A2DE9E284E534000B8F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		90A2DEAD284E534000B8F876 /* MC2 - Market ResearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MC2 - Market ResearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A2DEB1284E534000B8F876 /* MC2___Market_ResearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MC2___Market_ResearchUITests.swift"; sourceTree = "<group>"; };
 		90A2DEB3284E534000B8F876 /* MC2___Market_ResearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MC2___Market_ResearchUITestsLaunchTests.swift"; sourceTree = "<group>"; };
+		90CCD54C28545D6D008D4F9A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		90CCD54D28545D6D008D4F9A /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		90CCD55128546CB0008D4F9A /* March.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = March.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +85,8 @@
 		90A2DE81284E533D00B8F876 = {
 			isa = PBXGroup;
 			children = (
+				90CCD54328545C8E008D4F9A /* Test */,
 				90A2DE8C284E533D00B8F876 /* MC2 - Market Research */,
-				90A2DEA6284E534000B8F876 /* MC2 - Market ResearchTests */,
-				90A2DEB0284E534000B8F876 /* MC2 - Market ResearchUITests */,
 				90A2DE8B284E533D00B8F876 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,14 +104,18 @@
 		90A2DE8C284E533D00B8F876 /* MC2 - Market Research */ = {
 			isa = PBXGroup;
 			children = (
+				90CCD54B28545D12008D4F9A /* View */,
+				90CCD54A28545D0D008D4F9A /* Model */,
+				90CCD54928545CDD008D4F9A /* Controller */,
 				90A2DE8D284E533D00B8F876 /* AppDelegate.swift */,
 				90A2DE8F284E533D00B8F876 /* SceneDelegate.swift */,
 				90A2DE91284E533D00B8F876 /* ViewController.swift */,
 				90A2DE93284E533D00B8F876 /* Main.storyboard */,
+				90CCD54C28545D6D008D4F9A /* TableViewCell.swift */,
+				90CCD54D28545D6D008D4F9A /* TableViewCell.xib */,
 				90A2DE99284E534000B8F876 /* Assets.xcassets */,
 				90A2DE9B284E534000B8F876 /* LaunchScreen.storyboard */,
 				90A2DE9E284E534000B8F876 /* Info.plist */,
-				90A2DE96284E533D00B8F876 /* MC2___Market_Research.xcdatamodeld */,
 			);
 			path = "MC2 - Market Research";
 			sourceTree = "<group>";
@@ -128,6 +135,37 @@
 				90A2DEB3284E534000B8F876 /* MC2___Market_ResearchUITestsLaunchTests.swift */,
 			);
 			path = "MC2 - Market ResearchUITests";
+			sourceTree = "<group>";
+		};
+		90CCD54328545C8E008D4F9A /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				90A2DEB0284E534000B8F876 /* MC2 - Market ResearchUITests */,
+				90A2DEA6284E534000B8F876 /* MC2 - Market ResearchTests */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		90CCD54928545CDD008D4F9A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		90CCD54A28545D0D008D4F9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90CCD55028546CB0008D4F9A /* March.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90CCD54B28545D12008D4F9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A2DE9D284E534000B8F876 /* LaunchScreen.storyboard in Resources */,
+				90CCD54F28545D6D008D4F9A /* TableViewCell.xib in Resources */,
 				90A2DE9A284E534000B8F876 /* Assets.xcassets in Resources */,
 				90A2DE95284E533D00B8F876 /* Main.storyboard in Resources */,
 			);
@@ -262,8 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A2DE92284E533D00B8F876 /* ViewController.swift in Sources */,
-				90A2DE98284E533D00B8F876 /* MC2___Market_Research.xcdatamodeld in Sources */,
+				90CCD54E28545D6D008D4F9A /* TableViewCell.swift in Sources */,
 				90A2DE8E284E533D00B8F876 /* AppDelegate.swift in Sources */,
+				90CCD55228546CB0008D4F9A /* March.xcdatamodeld in Sources */,
 				90A2DE90284E533D00B8F876 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,13 +648,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		90A2DE96284E533D00B8F876 /* MC2___Market_Research.xcdatamodeld */ = {
+		90CCD55028546CB0008D4F9A /* March.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				90A2DE97284E533D00B8F876 /* MC2___Market_Research.xcdatamodel */,
+				90CCD55128546CB0008D4F9A /* March.xcdatamodel */,
 			);
-			currentVersion = 90A2DE97284E533D00B8F876 /* MC2___Market_Research.xcdatamodel */;
-			path = "MC2___Market_Research.xcdatamodeld";
+			currentVersion = 90CCD55128546CB0008D4F9A /* March.xcdatamodel */;
+			path = March.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
