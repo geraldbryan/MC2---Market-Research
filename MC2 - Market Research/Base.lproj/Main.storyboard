@@ -137,6 +137,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="resDead" destination="WJE-oV-uZu" id="UDT-RJ-yKe"/>
                         <outlet property="resName" destination="Ymf-yX-CvN" id="0rM-vx-XZZ"/>
                         <outlet property="resObj" destination="hlo-0Y-Es4" id="B3a-UY-bam"/>
                         <outlet property="saveResearch" destination="Htx-gX-UkP" id="Vyf-aV-Zgn"/>

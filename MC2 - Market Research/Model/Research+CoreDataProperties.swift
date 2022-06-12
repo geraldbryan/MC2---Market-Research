@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension Research {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Research> {

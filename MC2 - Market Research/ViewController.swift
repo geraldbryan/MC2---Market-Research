@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -26,8 +27,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.delegate = self
         getAllItems()
         
+        //deleteAllData("Research")
+        
         // Do any additional setup after loading the view
 
+    }
+    //delete all research data
+    func deleteAllData(_ entity:String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                context.delete(objectData)
+                do{
+                    try context.save()
+                } catch{
+                    
+                }
+            }
+        } catch let error {
+            print("Detele all data in \(entity) error :", error)
+        }
     }
     
     // Segue Function
@@ -79,10 +101,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "item_cell", for: indexPath) as! TableViewCell
         
-        let model = models[indexPath.row]
+        let model = models.reversed()[indexPath.row]
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        
+        let strDeadline = formatter.string(from: model.deadline!)
         
         cell.researchName?.text = model.name
-        cell.researchObjective?.text = model.objective
+        cell.researchObjective?.text = "Deadline: \(strDeadline)"
         
         return cell
     }
@@ -109,6 +136,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
           headerView.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
       }
   }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+                
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            
+            let alert = UIAlertController(title: "Delete Research", message: "Are you sure you want to delete this research?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
+                
+                let deleteObject = self.models[indexPath.row]
+                self.context.delete(deleteObject)
+                
+                do
+                {
+                    try self.context.save()
+                    self.getAllItems()
+                }
+                
+                catch
+                {
+                    
+                }
+            }))
+            
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { _ in
+                alert.dismiss(animated: true)
+            }))
+            
+            self.present(alert, animated: true)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
     
     
 }

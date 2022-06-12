@@ -12,6 +12,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var researchName: UILabel!
     @IBOutlet var researchObjective: UILabel!
     @IBOutlet var innerView: UIView!
+    @IBOutlet var progress: UIProgressView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,7 @@ class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
     override func layoutSubviews() {
 
         // just use the layer's shadow... adding the Bezier
@@ -32,6 +34,10 @@ class TableViewCell: UITableViewCell {
 
         innerView.layer.cornerRadius = 12
         innerView.layer.masksToBounds = false
+        
+        progress.layer.cornerRadius = 15
+        progress.layer.borderColor = .init(red: 77, green: 90, blue: 130, alpha: 100)
+        progress.transform = progress.transform.scaledBy(x: 1, y: 2)
 }
 
 

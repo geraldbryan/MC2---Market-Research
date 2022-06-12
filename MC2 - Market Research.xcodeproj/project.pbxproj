@@ -61,6 +61,7 @@
 		90CCD5552854CB85008D4F9A /* NewResearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewResearch.swift; sourceTree = "<group>"; };
 		90CCD5572854E3F6008D4F9A /* Research+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Research+CoreDataClass.swift"; sourceTree = "<group>"; };
 		90CCD5582854E3F6008D4F9A /* Research+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Research+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		90CCD55E285596B5008D4F9A /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +111,7 @@
 		90A2DE8C284E533D00B8F876 /* MC2 - Market Research */ = {
 			isa = PBXGroup;
 			children = (
+				90CCD55D28558D47008D4F9A /* Font */,
 				90CCD54B28545D12008D4F9A /* View */,
 				90CCD54A28545D0D008D4F9A /* Model */,
 				90CCD54928545CDD008D4F9A /* Controller */,
@@ -175,6 +177,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		90CCD55D28558D47008D4F9A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				90CCD55E285596B5008D4F9A /* SF-Pro.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

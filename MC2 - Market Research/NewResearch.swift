@@ -13,6 +13,7 @@ class NewResearch: UIViewController {
     
     @IBOutlet var resObj: UITextField!
     @IBOutlet var resName: UITextField!
+    @IBOutlet var resDead: UIDatePicker!
     @IBOutlet var saveResearch: UIButton!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -28,14 +29,20 @@ class NewResearch: UIViewController {
         resObj.borderStyle = .roundedRect
         resName.borderStyle = .roundedRect
         // Do any additional setup after loading the view.
+        
+    }
+    
+    @IBAction func changeDatePicker(){
+        
+        
     }
     
     @IBAction func tapSaveButton(){
         let newItem = Research(context: context)
         
         newItem.name = resName.text
-        newItem.objective = resObj.text
-        newItem.deadline = deadline
+        //newItem.objective = resObj.text
+        newItem.deadline = resDead.date
         
         do{
             try context.save()
