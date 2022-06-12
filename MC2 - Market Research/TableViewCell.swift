@@ -35,9 +35,17 @@ class TableViewCell: UITableViewCell {
         innerView.layer.cornerRadius = 12
         innerView.layer.masksToBounds = false
         
-        progress.layer.cornerRadius = 15
+        
+        progress.layer.cornerRadius = 12
+        self.progress.clipsToBounds = true
+        // Set the rounded edge for the inner bar
+        self.layer.sublayers![1].cornerRadius = 12
+        self.subviews[1].clipsToBounds = true
+        
         progress.layer.borderColor = .init(red: 77, green: 90, blue: 130, alpha: 100)
-        progress.transform = progress.transform.scaledBy(x: 1, y: 2)
+        //progress.transform = progress.transform.scaledBy(x: 1, y: 2)
+        var transform : CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 4.0)
+        progress.transform = transform
 }
 
 
