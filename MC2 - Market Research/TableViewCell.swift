@@ -36,7 +36,7 @@ class TableViewCell: UITableViewCell {
         innerView.layer.masksToBounds = false
         
         
-        progress.layer.cornerRadius = 12
+        progress.layer.cornerRadius = progress.layer.shadowOffset.height/2
         self.progress.clipsToBounds = true
         // Set the rounded edge for the inner bar
         self.layer.sublayers![1].cornerRadius = 12

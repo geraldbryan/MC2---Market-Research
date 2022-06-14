@@ -53,6 +53,7 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         let model = researchPage[indexPath.row]
         cell.researchStepName.text = model.stepName
         cell.researchStepProgress.text = "test"
+        cell.researchStepImage.image = UIImage(named: "SWOT.png")
         return cell
     }
     
