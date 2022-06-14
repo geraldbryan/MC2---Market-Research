@@ -18,13 +18,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     private var models = [Research]()
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var quoteImage: UIImageView!
+    @IBOutlet var pageControl: UIPageControl!
+    
+    let images = ["motivation2.png","motivation1.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
+        
+        // Image Carousel
+        self.pageControl.numberOfPages = images.count
+        self.pageControl.currentPage = 1
+        let timers = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        timers.fire()
+
+        // Tableview
         self.tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "item_cell")
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        // Fetching core data
         getAllItems()
         
         //deleteAllData("Research")
@@ -32,6 +46,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view
 
     }
+    
+    var index = 0
+    @objc func update()  {
+        index = index + 1
+
+        if index >= images.count {
+            index = 0
+        }
+        quoteImage.image = UIImage(named: images[index])
+        pageControl.currentPage = index
+    }
+    
     //delete all research data
     func deleteAllData(_ entity:String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
