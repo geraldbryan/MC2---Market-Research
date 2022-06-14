@@ -8,7 +8,6 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="SF-Pro.ttf">
-            <string>SFPro-Bold</string>
             <string>SFPro-Semibold</string>
         </array>
     </customFonts>
@@ -29,7 +28,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Research Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpt-oW-06m">
                                 <rect key="frame" x="19" y="19" width="215" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>

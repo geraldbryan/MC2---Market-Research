@@ -45,6 +45,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="researchProjectView" destination="akF-a3-9cX" id="wHb-3z-8D1"/>
                 <outlet property="researchStepImage" destination="HbX-Ok-L63" id="Miv-k5-N9O"/>
                 <outlet property="researchStepName" destination="dUF-GE-mbC" id="3Gx-2q-r4T"/>
                 <outlet property="researchStepProgress" destination="A7j-hq-D5b" id="PWo-KZ-Z0S"/>

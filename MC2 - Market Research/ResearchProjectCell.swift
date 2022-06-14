@@ -12,6 +12,7 @@ class ResearchProjectCell: UITableViewCell {
     @IBOutlet weak var researchStepName: UILabel!
     @IBOutlet weak var researchStepProgress: UILabel!
     @IBOutlet weak var researchStepImage: UIImageView!
+    @IBOutlet weak var researchProjectView: UIView!
     let rp_cell = "rp_cell"
     
     override func awakeFromNib() {
@@ -26,7 +27,15 @@ class ResearchProjectCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    override func layoutSubviews() {
+
+        // just use the layer's shadow... adding the Bezier
+        //let shadowPath = UIBezierPath(roundedRect: innerView.bounds, cornerRadius: cornerRadius)
+        //innerView.layer.shadowPath = shadowPath.cgPath
+
+        researchProjectView.layer.cornerRadius = 12
+        researchProjectView.layer.masksToBounds = false
+    }
 }
 
 //extension ResearchProjectCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
