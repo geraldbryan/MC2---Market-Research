@@ -26,6 +26,8 @@
 		90CCD5592854E3F6008D4F9A /* Research+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD5572854E3F6008D4F9A /* Research+CoreDataClass.swift */; };
 		90CCD55A2854E3F6008D4F9A /* Research+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD5582854E3F6008D4F9A /* Research+CoreDataProperties.swift */; };
 		90CCD5602857380E008D4F9A /* marketResearchStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD55F2857380E008D4F9A /* marketResearchStep.swift */; };
+		90CCD5652858E51C008D4F9A /* previousTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD5632858E51B008D4F9A /* previousTableViewCell.swift */; };
+		90CCD5662858E51C008D4F9A /* previousTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CCD5642858E51C008D4F9A /* previousTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		90CCD5582854E3F6008D4F9A /* Research+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Research+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		90CCD55E285596B5008D4F9A /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		90CCD55F2857380E008D4F9A /* marketResearchStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marketResearchStep.swift; sourceTree = "<group>"; };
+		90CCD5632858E51B008D4F9A /* previousTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = previousTableViewCell.swift; sourceTree = "<group>"; };
+		90CCD5642858E51C008D4F9A /* previousTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = previousTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 				90A2DE8D284E533D00B8F876 /* AppDelegate.swift */,
 				90A2DE8F284E533D00B8F876 /* SceneDelegate.swift */,
 				90A2DE91284E533D00B8F876 /* ViewController.swift */,
+				90CCD5632858E51B008D4F9A /* previousTableViewCell.swift */,
+				90CCD5642858E51C008D4F9A /* previousTableViewCell.xib */,
 				90CCD5552854CB85008D4F9A /* NewResearch.swift */,
 				90A2DE93284E533D00B8F876 /* Main.storyboard */,
 				90CCD55F2857380E008D4F9A /* marketResearchStep.swift */,
@@ -303,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90CCD5662858E51C008D4F9A /* previousTableViewCell.xib in Resources */,
 				09A8B3B7285737E200BB99CA /* ResearchProjectCell.xib in Resources */,
 				90A2DE9D284E534000B8F876 /* LaunchScreen.storyboard in Resources */,
 				90CCD54F28545D6D008D4F9A /* TableViewCell.xib in Resources */,
@@ -338,6 +345,7 @@
 				90CCD54E28545D6D008D4F9A /* TableViewCell.swift in Sources */,
 				90CCD5592854E3F6008D4F9A /* Research+CoreDataClass.swift in Sources */,
 				90A2DE8E284E533D00B8F876 /* AppDelegate.swift in Sources */,
+				90CCD5652858E51C008D4F9A /* previousTableViewCell.swift in Sources */,
 				90CCD55A2854E3F6008D4F9A /* Research+CoreDataProperties.swift in Sources */,
 				90CCD55228546CB0008D4F9A /* March.xcdatamodeld in Sources */,
 				90A2DE90284E533D00B8F876 /* SceneDelegate.swift in Sources */,

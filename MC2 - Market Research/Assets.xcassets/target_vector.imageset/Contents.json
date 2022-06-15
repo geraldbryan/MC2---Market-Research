@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "SWOT each research.png",
+      "filename" : "(research project) Target market.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "(research project) target market 2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "(research project) target market 3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
