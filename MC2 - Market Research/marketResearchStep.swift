@@ -13,7 +13,7 @@ struct researchStep {
     var stepWhy: String?
     var stepWhat: String?
     var resourceTools: String?
-    //var imageVector: UIImage?
+    var imageVector: UIImage?
     //var imageColor: UIImage?
 }
 
