@@ -28,6 +28,9 @@
 		90CCD5602857380E008D4F9A /* marketResearchStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD55F2857380E008D4F9A /* marketResearchStep.swift */; };
 		90CCD5652858E51C008D4F9A /* previousTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD5632858E51B008D4F9A /* previousTableViewCell.swift */; };
 		90CCD5662858E51C008D4F9A /* previousTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CCD5642858E51C008D4F9A /* previousTableViewCell.xib */; };
+		90CCD568285A305A008D4F9A /* onGoingResearchControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD567285A305A008D4F9A /* onGoingResearchControllerViewController.swift */; };
+		90CCD56B285A30FE008D4F9A /* onGoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCD569285A30FE008D4F9A /* onGoingTableViewCell.swift */; };
+		90CCD56C285A30FE008D4F9A /* onGoingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CCD56A285A30FE008D4F9A /* onGoingTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		90CCD55F2857380E008D4F9A /* marketResearchStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marketResearchStep.swift; sourceTree = "<group>"; };
 		90CCD5632858E51B008D4F9A /* previousTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = previousTableViewCell.swift; sourceTree = "<group>"; };
 		90CCD5642858E51C008D4F9A /* previousTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = previousTableViewCell.xib; sourceTree = "<group>"; };
+		90CCD567285A305A008D4F9A /* onGoingResearchControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onGoingResearchControllerViewController.swift; sourceTree = "<group>"; };
+		90CCD569285A30FE008D4F9A /* onGoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onGoingTableViewCell.swift; sourceTree = "<group>"; };
+		90CCD56A285A30FE008D4F9A /* onGoingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = onGoingTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 				90CCD5642858E51C008D4F9A /* previousTableViewCell.xib */,
 				90CCD5552854CB85008D4F9A /* NewResearch.swift */,
 				90A2DE93284E533D00B8F876 /* Main.storyboard */,
+				90CCD569285A30FE008D4F9A /* onGoingTableViewCell.swift */,
+				90CCD56A285A30FE008D4F9A /* onGoingTableViewCell.xib */,
+				90CCD567285A305A008D4F9A /* onGoingResearchControllerViewController.swift */,
 				90CCD55F2857380E008D4F9A /* marketResearchStep.swift */,
 				09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */,
 				09A8B3B82857415900BB99CA /* ResearchProgressController.swift */,
@@ -311,6 +320,7 @@
 			files = (
 				90CCD5662858E51C008D4F9A /* previousTableViewCell.xib in Resources */,
 				09A8B3B7285737E200BB99CA /* ResearchProjectCell.xib in Resources */,
+				90CCD56C285A30FE008D4F9A /* onGoingTableViewCell.xib in Resources */,
 				90A2DE9D284E534000B8F876 /* LaunchScreen.storyboard in Resources */,
 				90CCD54F28545D6D008D4F9A /* TableViewCell.xib in Resources */,
 				90A2DE9A284E534000B8F876 /* Assets.xcassets in Resources */,
@@ -344,6 +354,7 @@
 				90A2DE92284E533D00B8F876 /* ViewController.swift in Sources */,
 				90CCD54E28545D6D008D4F9A /* TableViewCell.swift in Sources */,
 				90CCD5592854E3F6008D4F9A /* Research+CoreDataClass.swift in Sources */,
+				90CCD568285A305A008D4F9A /* onGoingResearchControllerViewController.swift in Sources */,
 				90A2DE8E284E533D00B8F876 /* AppDelegate.swift in Sources */,
 				90CCD5652858E51C008D4F9A /* previousTableViewCell.swift in Sources */,
 				90CCD55A2854E3F6008D4F9A /* Research+CoreDataProperties.swift in Sources */,
@@ -351,6 +362,7 @@
 				90A2DE90284E533D00B8F876 /* SceneDelegate.swift in Sources */,
 				09A8B3B92857415900BB99CA /* ResearchProgressController.swift in Sources */,
 				90CCD5562854CB85008D4F9A /* NewResearch.swift in Sources */,
+				90CCD56B285A30FE008D4F9A /* onGoingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

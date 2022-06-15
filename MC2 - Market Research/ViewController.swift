@@ -16,18 +16,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private var models = [Research]()
-    var filtered = [Research]()
+    private var filtered = [Research]()
+    private var onGoing = [Research]()
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var prevTableView: UITableView!
     @IBOutlet var quoteImage: UIImageView!
     @IBOutlet var pageControl: UIPageControl!
+    @IBOutlet var emptyOnGoing: UIView!
+    @IBOutlet var emptyPrevious: UIView!
+    @IBOutlet var emptyImage: UIImageView!
+    @IBOutlet var emptyAll: UIView!
+    @IBOutlet var emptyAllImage: UIImageView!
     
     let images = ["motivation2.png","motivation1.png","motivation3.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
+        
+        emptyImage.image = UIImage(named: "swot.png")
+        emptyAllImage.image = UIImage(named: "target.png")
+        //deleteAllData("Research")
         
         // Image Carousel
         self.pageControl.numberOfPages = images.count
@@ -96,12 +106,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         do{
             models = try context.fetch(Research.fetchRequest())
             
+            self.filtered = models.filter{ $0.name == "Ali"}
+            self.onGoing = models.filter{ $0.name != "Ali"}
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
             
             DispatchQueue.main.async {
                 self.prevTableView.reloadData()
+            }
+            
+            if onGoing.count == 0{
+                emptyOnGoing.isHidden = false
+            } else {
+                emptyOnGoing.isHidden = true
+            }
+            
+            if filtered.count == 0{
+                emptyPrevious.isHidden = false
+            } else {
+                emptyPrevious.isHidden = true
+            }
+            
+            if filtered.count == 0 && onGoing.count == 0 {
+                emptyAll.isHidden = false
+            } else {
+                emptyAll.isHidden = true
             }
             
         } catch{
@@ -138,7 +169,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == tableView,
                 let cell = tableView.dequeueReusableCell(withIdentifier: "item_cell") as? TableViewCell {
-                let model = models.reversed()[indexPath.row]
+                
+                let model = onGoing.reversed()[indexPath.row]
         
                 let formatter = DateFormatter()
                 formatter.dateFormat = "MMM d, yyyy"
@@ -152,8 +184,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             } else if tableView == prevTableView,
                 let cell = tableView.dequeueReusableCell(withIdentifier: "prev_cell") as? previousTableViewCell {
-                
-                self.filtered = models.filter{ $0.name == "Ali"}
         
                 let model = filtered.reversed()[indexPath.row]
         
@@ -161,33 +191,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
                 return cell
             }
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "item_cell", for: indexPath) as! TableViewCell
-//
-//        self.filtered = models.filter{ $0.name == "Ali"}
-//
-//        let model = models.reversed()[indexPath.row]
-//
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MMM d, yyyy"
-//
-//        let strDeadline = formatter.string(from: model.deadline!)
-//
-//        cell.researchName?.text = model.name
-//        cell.researchObjective?.text = "Deadline: \(strDeadline)"
-//
-//        return cell
+
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-
+        var count:Int?
+                
+                if tableView == self.tableView {
+                    if onGoing.count <= 2{
+                        count = onGoing.count
+                    } else {
+                        count = 2
+                    }
+                }
+                
+                if tableView == self.prevTableView {
+                    if filtered.count <= 2 {
+                        count = filtered.count
+                    } else {
+                        count = 2
+                    }
+                }
+                
+                return count!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var tinggi:CGFloat?
         
-        return 97
+        if tableView == tableView{
+            tinggi =  120
         }
+        
+        if tableView == prevTableView{
+            tinggi = 80
+        }
+        
+        return tinggi!
+    }
     
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //
@@ -201,66 +243,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
           headerView.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
       }
   }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-                
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
-            
-            let alert = UIAlertController(title: "Delete Research", message: "Are you sure you want to delete this research?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
-                
-                let deleteObject = self.models[indexPath.row]
-                self.context.delete(deleteObject)
-                
-                do
-                {
-                    try self.context.save()
-                    self.getAllItems()
-                }
-                
-                catch
-                {
-                    
-                }
-            }))
-            
-            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { _ in
-                alert.dismiss(animated: true)
-            }))
-            
-            self.present(alert, animated: true)
-        }
-        return UISwipeActionsConfiguration(actions: [deleteAction])
-    }
-    
-//    // Table view funtion
-//    func TableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "prev_cell", for: indexPath) as! previousTableViewCell
 //
-//        self.filtered = models.filter{ $0.name == "Ali"}
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 //
-//        let model = filtered.reversed()[indexPath.row]
+//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
 //
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MMM d, yyyy"
+//            let alert = UIAlertController(title: "Delete Research", message: "Are you sure you want to delete this research?", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
 //
-//        let strDeadline = formatter.string(from: model.deadline!)
+//                let deleteObject = self.models[indexPath.row]
+//                self.context.delete(deleteObject)
 //
-//        cell.researchName?.text = model.name
+//                do
+//                {
+//                    try self.context.save()
+//                    self.getAllItems()
+//                }
 //
-//        return cell
-//    }
+//                catch
+//                {
 //
-//    func TableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 2
+//                }
+//            }))
 //
-//    }
+//            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { _ in
+//                alert.dismiss(animated: true)
+//            }))
 //
-//    func TableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        return 97
+//            self.present(alert, animated: true)
 //        }
+//        return UISwipeActionsConfiguration(actions: [deleteAction])
+//    }
     
+
     
 }
 
