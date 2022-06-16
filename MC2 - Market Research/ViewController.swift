@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var quoteImage: UIImageView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var emptyOnGoing: UIView!
+    @IBOutlet var emptyOnGoing2: UIView!
     @IBOutlet var emptyPrevious: UIView!
     @IBOutlet var emptyImage: UIImageView!
     @IBOutlet var emptyAll: UIView!
@@ -31,12 +32,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let images = ["motivation2.png","motivation1.png","motivation3.png"]
     
+    override func viewDidAppear(_ animated: Bool) {
+        getAllItems()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
         
-        emptyImage.image = UIImage(named: "swot.png")
-        emptyAllImage.image = UIImage(named: "target.png")
+        emptyImage.image = UIImage(named: "empty_ongoing.png")
+        emptyAllImage.image = UIImage(named: "empty_state.png")
         //deleteAllData("Research")
         
         // Image Carousel
@@ -119,8 +123,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             if onGoing.count == 0{
                 emptyOnGoing.isHidden = false
+                emptyOnGoing2.isHidden = false
             } else {
                 emptyOnGoing.isHidden = true
+                emptyOnGoing2.isHidden = true
             }
             
             if filtered.count == 0{

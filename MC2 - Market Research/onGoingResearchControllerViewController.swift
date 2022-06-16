@@ -7,13 +7,12 @@
 
 import UIKit
 
-class onGoingResearchControllerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class onGoingResearchControllerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate {
     
     private var models = [Research]()
     private var onGoing = [Research]()
     
     @IBOutlet var onGoingTable: UITableView!
-    @IBOutlet var backButton: UIButton!
     
     // Core data configuration
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -21,6 +20,8 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "On Going Research"
+        self.navigationItem.largeTitleDisplayMode = .never
         // Tableview
         self.onGoingTable.register(UINib(nibName: "onGoingTableViewCell", bundle: nil), forCellReuseIdentifier: "onGoing_cell")
         self.onGoingTable.dataSource = self
@@ -68,7 +69,7 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 126
     }
     
     

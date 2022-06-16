@@ -7,19 +7,21 @@
 
 import UIKit
 
-class finishedResearchedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class finishedResearchedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate {
     
     private var models = [Research]()
     private var finished = [Research]()
     
     @IBOutlet var finishedTable: UITableView!
-    @IBOutlet var backButton: UIButton!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     override func viewDidLoad() {
         
         super.viewDidLoad()
         // Tableview
+
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.title = " Finished Project"
         self.finishedTable.register(UINib(nibName: "finishedTableViewCell", bundle: nil), forCellReuseIdentifier: "fin_cell")
         self.finishedTable.dataSource = self
         self.finishedTable.delegate = self
@@ -59,17 +61,8 @@ class finishedResearchedViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
-    
-    
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//      if let headerView = view as? UITableViewHeaderFooterView {
-//          headerView.contentView.backgroundColor = .white
-//          headerView.textLabel?.textColor = .black
-//          headerView.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-//      }
-//  }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 

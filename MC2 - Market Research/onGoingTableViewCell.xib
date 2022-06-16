@@ -9,16 +9,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="onGoing_cell" rowHeight="126" id="KGk-i7-Jjw" customClass="onGoingTableViewCell" customModule="MC2___Market_Research" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="372" height="126"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="onGoing_cell" rowHeight="114" id="KGk-i7-Jjw" customClass="onGoingTableViewCell" customModule="MC2___Market_Research" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="372" height="126"/>
+                <rect key="frame" x="0.0" y="0.0" width="394" height="114"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UlZ-Nk-CL9">
-                        <rect key="frame" x="9" y="11" width="352" height="100"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlZ-Nk-CL9">
+                        <rect key="frame" x="20" y="0.0" width="352" height="94"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="magnifyingglass.circle.fill" catalog="system" id="vpQ-OZ-6EC">
                                 <rect key="frame" x="15" y="16" width="60" height="62"/>
@@ -49,6 +48,12 @@
                         <color key="backgroundColor" red="0.47843140360000003" green="0.5176470876" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="UlZ-Nk-CL9" secondAttribute="trailing" constant="22" id="M9T-4m-HPU"/>
+                    <constraint firstItem="UlZ-Nk-CL9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="SvV-t1-zeL"/>
+                    <constraint firstItem="UlZ-Nk-CL9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pzk-eJ-88o"/>
+                    <constraint firstAttribute="bottom" secondItem="UlZ-Nk-CL9" secondAttribute="bottom" constant="20" id="u3k-pv-xkL"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
@@ -57,7 +62,7 @@
                 <outlet property="researchName" destination="PvI-bc-gZd" id="cWC-Bh-LcH"/>
                 <outlet property="researchObjective" destination="nbo-en-miP" id="HFY-5t-phH"/>
             </connections>
-            <point key="canvasLocation" x="175.36231884057972" y="101.11607142857143"/>
+            <point key="canvasLocation" x="195.6521739130435" y="100.44642857142857"/>
         </tableViewCell>
     </objects>
     <resources>
