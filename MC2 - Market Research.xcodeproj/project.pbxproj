@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09039A50285B263B00156FF3 /* nameObjectiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09039A4E285B263B00156FF3 /* nameObjectiveCell.swift */; };
+		09039A51285B263B00156FF3 /* nameObjectiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09039A4F285B263B00156FF3 /* nameObjectiveCell.xib */; };
 		09A8B3B6285737E200BB99CA /* ResearchProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */; };
 		09A8B3B7285737E200BB99CA /* ResearchProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A8B3B5285737E200BB99CA /* ResearchProjectCell.xib */; };
 		09A8B3B92857415900BB99CA /* ResearchProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A8B3B82857415900BB99CA /* ResearchProgressController.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09039A4E285B263B00156FF3 /* nameObjectiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameObjectiveCell.swift; sourceTree = "<group>"; };
+		09039A4F285B263B00156FF3 /* nameObjectiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = nameObjectiveCell.xib; sourceTree = "<group>"; };
 		09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchProjectCell.swift; sourceTree = "<group>"; };
 		09A8B3B5285737E200BB99CA /* ResearchProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResearchProjectCell.xib; sourceTree = "<group>"; };
 		09A8B3B82857415900BB99CA /* ResearchProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchProgressController.swift; sourceTree = "<group>"; };
@@ -135,9 +139,11 @@
 				90CCD5552854CB85008D4F9A /* NewResearch.swift */,
 				90A2DE93284E533D00B8F876 /* Main.storyboard */,
 				90CCD55F2857380E008D4F9A /* marketResearchStep.swift */,
-				09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */,
 				09A8B3B82857415900BB99CA /* ResearchProgressController.swift */,
+				09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */,
 				09A8B3B5285737E200BB99CA /* ResearchProjectCell.xib */,
+				09039A4E285B263B00156FF3 /* nameObjectiveCell.swift */,
+				09039A4F285B263B00156FF3 /* nameObjectiveCell.xib */,
 				90CCD54C28545D6D008D4F9A /* TableViewCell.swift */,
 				90CCD54D28545D6D008D4F9A /* TableViewCell.xib */,
 				90A2DE99284E534000B8F876 /* Assets.xcassets */,
@@ -313,6 +319,7 @@
 				09A8B3B7285737E200BB99CA /* ResearchProjectCell.xib in Resources */,
 				90A2DE9D284E534000B8F876 /* LaunchScreen.storyboard in Resources */,
 				90CCD54F28545D6D008D4F9A /* TableViewCell.xib in Resources */,
+				09039A51285B263B00156FF3 /* nameObjectiveCell.xib in Resources */,
 				90A2DE9A284E534000B8F876 /* Assets.xcassets in Resources */,
 				90A2DE95284E533D00B8F876 /* Main.storyboard in Resources */,
 			);
@@ -339,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09039A50285B263B00156FF3 /* nameObjectiveCell.swift in Sources */,
 				90CCD5602857380E008D4F9A /* marketResearchStep.swift in Sources */,
 				09A8B3B6285737E200BB99CA /* ResearchProjectCell.swift in Sources */,
 				90A2DE92284E533D00B8F876 /* ViewController.swift in Sources */,
