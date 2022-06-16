@@ -1,44 +1,41 @@
 //
-//  onGoingResearchControllerViewController.swift
+//  finishedResearchedViewController.swift
 //  MC2 - Market Research
 //
-//  Created by Gerald Bryan on 15/06/22.
+//  Created by Gerald Bryan on 16/06/22.
 //
 
 import UIKit
 
-class onGoingResearchControllerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class finishedResearchedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var models = [Research]()
-    private var onGoing = [Research]()
+    private var finished = [Research]()
     
-    @IBOutlet var onGoingTable: UITableView!
+    @IBOutlet var finishedTable: UITableView!
     @IBOutlet var backButton: UIButton!
     
-    // Core data configuration
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
         // Tableview
-        self.onGoingTable.register(UINib(nibName: "onGoingTableViewCell", bundle: nil), forCellReuseIdentifier: "onGoing_cell")
-        self.onGoingTable.dataSource = self
-        self.onGoingTable.delegate = self
+        self.finishedTable.register(UINib(nibName: "finishedTableViewCell", bundle: nil), forCellReuseIdentifier: "fin_cell")
+        self.finishedTable.dataSource = self
+        self.finishedTable.delegate = self
         
         getAllItems()
         // Do any additional setup after loading the view.
     }
     
-    // Core data funtion
     func getAllItems(){
         do{
             models = try context.fetch(Research.fetchRequest())
             
-            self.onGoing = models.filter{ $0.name != "Ali"}
+            self.finished = models.filter{ $0.name == "Ali"}
             
             DispatchQueue.main.async {
-                self.onGoingTable.reloadData()
+                self.finishedTable.reloadData()
             }
             
         } catch{
@@ -46,39 +43,33 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
         }
     }
     
-    // Table view funtion
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "onGoing_cell", for: indexPath) as! onGoingTableViewCell
-        let model = onGoing.reversed()[indexPath.row]
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, yyyy"
-
-        let strDeadline = formatter.string(from: model.deadline!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "fin_cell", for: indexPath) as! finishedTableViewCell
+        let model = finished.reversed()[indexPath.row]
 
         cell.researchName?.text = model.name
-        cell.researchObjective?.text = "Deadline: \(strDeadline)"
 
         return cell
+       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return onGoing.count
+        return finished.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 80
     }
     
     
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-      if let headerView = view as? UITableViewHeaderFooterView {
-          headerView.contentView.backgroundColor = .white
-          headerView.textLabel?.textColor = .black
-          headerView.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-      }
-  }
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//      if let headerView = view as? UITableViewHeaderFooterView {
+//          headerView.contentView.backgroundColor = .white
+//          headerView.textLabel?.textColor = .black
+//          headerView.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+//      }
+//  }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
@@ -87,7 +78,7 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
             let alert = UIAlertController(title: "Delete Research", message: "Are you sure you want to delete this research?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
 
-                let deleteObject = self.onGoing[indexPath.row]
+                let deleteObject = self.finished[indexPath.row]
                 self.context.delete(deleteObject)
 
                 do
@@ -119,11 +110,7 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func unwind( _ seg: UIStoryboardSegue) {
-    }
-    
     @IBAction func backToHome(_ sender: Any) {
-        performSegue(withIdentifier: "unwindHome", sender: self)
+        performSegue(withIdentifier: "finishedUnwindHome", sender: self)
     }
-
 }
