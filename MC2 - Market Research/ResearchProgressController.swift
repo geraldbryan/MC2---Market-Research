@@ -53,12 +53,12 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row < 1{
+        if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "nameObj_cell", for: indexPath) as! nameObjectiveCell
-            researchProjectTableView.rowHeight = 190
+            //researchProjectTableView.rowHeight = 190
             return cell
         }
-        researchProjectTableView.rowHeight = 125
+        //researchProjectTableView.rowHeight = 169
         let cell = tableView.dequeueReusableCell(withIdentifier: "rp_cell", for: indexPath) as! ResearchProjectCell
         let model = researchPage[indexPath.row-1]
         cell.researchStepName.text = model.stepName
@@ -72,7 +72,15 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         }
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height : CGFloat
+        if indexPath.row == 0 {
+            height = 190
+        }else {
+            height = 140
+        }
+        return height
+        }
 
 
         // just use the layer's shadow... adding the Bezier
