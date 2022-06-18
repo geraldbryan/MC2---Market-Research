@@ -26,8 +26,10 @@ func initData() {
 }
 
 
-
 class ResearchProgressController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate  {
+    
+    var resName = ""
+    var resObj = ""
     
     @IBOutlet weak var researchProjectTableView: UITableView!
     @IBOutlet weak var stepsScrollView : UIScrollView!
@@ -36,6 +38,8 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.title = "Research Project"
 
         
         initData()
@@ -43,7 +47,6 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         researchProjectTableView.register(UINib(nibName: "nameObjectiveCell", bundle: nil), forCellReuseIdentifier: "nameObj_cell")
         researchProjectTableView.dataSource = self
         researchProjectTableView.delegate = self
-        //tableHeight.constant = self.view.frame.height-64
 
     }
     
@@ -55,7 +58,8 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "nameObj_cell", for: indexPath) as! nameObjectiveCell
-            //researchProjectTableView.rowHeight = 190
+            cell.researchNameIC.text = resName
+            cell.researchObjIC.text = resObj
             return cell
         }
         //researchProjectTableView.rowHeight = 169
@@ -65,10 +69,10 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         cell.researchStepImage.image = model.imageVector
         //cell.researchProgress.image = UIImage.
         if model.stepName == "SWOT Analysis"{
-            cell.researchProjectView.backgroundColor = UIColor.green
+            cell.researchProjectView.backgroundColor = UIColor(red: 206/255, green: 229/255, blue: 214/255, alpha: 1)
         }
         else if model.stepName == "Target Market Analysis"{
-            cell.researchProjectView.backgroundColor = UIColor.yellow
+            cell.researchProjectView.backgroundColor = UIColor(red: 248/255, green: 220/255, blue: 200/255, alpha: 1)
         }
         return cell
     }
@@ -81,18 +85,6 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         }
         return height
         }
-
-
-        // just use the layer's shadow... adding the Bezier
-        //let shadowPath = UIBezierPath(roundedRect: innerView.bounds, cornerRadius: cornerRadius)
-        //innerView.layer.shadowPath = shadowPath.cgPath
-
-
-    
-    
-
-    
-    
 
     /*
     // MARK: - Navigation

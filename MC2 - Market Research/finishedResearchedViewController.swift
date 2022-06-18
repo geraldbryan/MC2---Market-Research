@@ -9,6 +9,7 @@ import UIKit
 
 class finishedResearchedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate {
     
+    var indexTwo = 0
     private var models = [Research]()
     private var finished = [Research]()
     
@@ -94,16 +95,20 @@ class finishedResearchedViewController: UIViewController, UITableViewDataSource,
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+            self.indexTwo = indexPath.row
+            performSegue(withIdentifier: "finToDetail", sender: self)
     }
-    */
-    @IBAction func backToHome(_ sender: Any) {
-        performSegue(withIdentifier: "finishedUnwindHome", sender: self)
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "finToDetail"{
+            if let dest = segue.destination as? ResearchProgressController{
+                
+                dest.resName = finished.reversed()[indexTwo].name ?? "New Research"
+                dest.resObj = finished.reversed()[indexTwo].objective ?? ""
+                
+            }
+        }
     }
 }

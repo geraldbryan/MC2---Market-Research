@@ -44,7 +44,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oDz-7e-gDN">
-                                        <rect key="frame" x="0.0" y="20" width="390" height="694"/>
+                                        <rect key="frame" x="0.0" y="-32" width="390" height="694"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="125" id="Wk3-Ne-VrI">
@@ -71,6 +71,16 @@
                         <viewLayoutGuide key="safeArea" id="epo-At-jBO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IjA-qW-QQw">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ePF-KR-atR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ae6-Jp-wfa">
+                                <rect key="frame" x="288" y="5" width="86" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="researchProjectTableView" destination="oDz-7e-gDN" id="mJu-Cj-DUi"/>
                         <outlet property="stepsScrollView" destination="rAz-9x-FwC" id="Ldk-dz-TdC"/>
@@ -79,42 +89,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnH-VH-nV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-865" y="816"/>
-        </scene>
-        <!--Coba Coba-->
-        <scene sceneID="MVE-cf-I3Z">
-            <objects>
-                <viewController id="tmA-iD-nbN" customClass="cobaCoba" customModule="MC2___Market_Research" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tvg-yu-jLp">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Research name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkh-rz-AOP">
-                                <rect key="frame" x="64" y="196" width="261" height="186"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Research objectives" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjM-3Y-SRt">
-                                <rect key="frame" x="65" y="429" width="261" height="186"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="x2o-kd-GjQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="GAl-an-EqY"/>
-                    <connections>
-                        <outlet property="nama" destination="Zkh-rz-AOP" id="Nx5-cc-YmO"/>
-                        <outlet property="obj" destination="BjM-3Y-SRt" id="P2u-w5-FIq"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e6A-Gx-yjt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="16.923076923076923" y="-693.12796208530801"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -146,7 +120,7 @@
                                     <color key="baseForegroundColor" red="0.30196079609999998" green="0.35294118520000001" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="tbJ-Vs-9xr" kind="show" identifier="onGoingSegue" id="qEO-HH-7jc"/>
+                                    <action selector="tapOnGoing" destination="BYZ-38-t0r" eventType="touchUpInside" id="QcA-iT-Nr0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Research" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t8n-O3-ziM">
@@ -164,7 +138,7 @@
                                     <color key="baseForegroundColor" red="0.30196079609999998" green="0.35294118520000001" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="l2B-cK-bMi" kind="show" identifier="prevSegue" id="ZiC-2h-Jvm"/>
+                                    <action selector="tapPrev" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wje-Ba-sds"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="prev_cell" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="y0i-aB-cJn">
@@ -268,7 +242,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="OOB-ZR-ff3" kind="presentation" identifier="newResearch" id="eLb-DR-qff"/>
+                                    <action selector="newResc" destination="BYZ-38-t0r" eventType="touchUpInside" id="nOB-tj-7S0"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -284,12 +258,16 @@
                         <outlet property="prevTableView" destination="y0i-aB-cJn" id="yjk-y6-iuB"/>
                         <outlet property="quoteImage" destination="zFP-li-cDb" id="2Cz-Ed-wrg"/>
                         <outlet property="tableView" destination="azt-oI-Bvj" id="jhy-fF-wnw"/>
-                        <segue destination="tmA-iD-nbN" kind="show" identifier="klikCell" id="xoX-NQ-OHc"/>
+                        <segue destination="PNq-E0-k4w" kind="show" identifier="klikCell" id="bZ3-Je-dBS"/>
+                        <segue destination="l2B-cK-bMi" kind="show" identifier="prevSegue" id="eyM-q2-xRR"/>
+                        <segue destination="tbJ-Vs-9xr" kind="show" identifier="onGoingSegue" id="Pbk-8Q-1fb"/>
+                        <segue destination="OOB-ZR-ff3" kind="presentation" identifier="newResSegue" id="1kw-G6-KBQ"/>
+                        <segue destination="PNq-E0-k4w" kind="show" identifier="klikFinished" id="af5-E9-Y6U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="48"/>
+            <point key="canvasLocation" x="17" y="48"/>
         </scene>
         <!--New Research-->
         <scene sceneID="wW8-ls-osn">
@@ -299,7 +277,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-Jt-ePB">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                                 <items>
@@ -335,7 +312,7 @@
                                 <textInputTraits key="textInputTraits" smartDashesType="yes"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="WJE-oV-uZu">
-                                <rect key="frame" x="232" y="269" width="138" height="31"/>
+                                <rect key="frame" x="232" y="269.33333333333331" width="138" height="31"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htx-gX-UkP">
                                 <rect key="frame" x="20" y="340.33333333333331" width="350" height="31"/>
@@ -416,6 +393,7 @@
                     <navigationItem key="navigationItem" id="qHF-19-asA"/>
                     <connections>
                         <outlet property="onGoingTable" destination="g18-4Q-q8C" id="Y6C-K6-oGd"/>
+                        <segue destination="PNq-E0-k4w" kind="show" identifier="onGoingToDetail" id="MV8-Xi-xxK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WK4-OC-Mef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -447,6 +425,7 @@
                     <navigationItem key="navigationItem" id="JEQ-oY-W7M"/>
                     <connections>
                         <outlet property="finishedTable" destination="Maq-2R-1a2" id="biL-Ep-VPf"/>
+                        <segue destination="PNq-E0-k4w" kind="show" identifier="finToDetail" id="pWM-ba-Dmn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeT-6B-5zZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -455,7 +434,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eLb-DR-qff"/>
+        <segue reference="MV8-Xi-xxK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>

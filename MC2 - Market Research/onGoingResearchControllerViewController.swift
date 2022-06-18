@@ -8,7 +8,7 @@
 import UIKit
 
 class onGoingResearchControllerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate {
-    
+    var indexTwo = 0
     private var models = [Research]()
     private var onGoing = [Research]()
     
@@ -111,20 +111,22 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+            self.indexTwo = indexPath.row
+            performSegue(withIdentifier: "onGoingToDetail", sender: self)
     }
     
-    @IBAction func backToHome(_ sender: Any) {
-        performSegue(withIdentifier: "unwindHome", sender: self)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "onGoingToDetail"{
+            if let dest = segue.destination as? ResearchProgressController{
+                
+                dest.resName = onGoing.reversed()[indexTwo].name ?? "New Research"
+                dest.resObj = onGoing.reversed()[indexTwo].objective ?? ""
+                
+            }
+        }
     }
+
 
 }

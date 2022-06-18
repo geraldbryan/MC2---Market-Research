@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let images = ["motivation2.png","motivation1.png","motivation3.png"]
     var indexTwo = 0
+    var indexThree = 0
     
     override func viewDidAppear(_ animated: Bool) {
         getAllItems()
@@ -240,17 +241,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        self.indexTwo = indexPath.row
-        performSegue(withIdentifier: "klikCell", sender: self)
+        if tableView == tableView{
+            self.indexTwo = indexPath.row
+            performSegue(withIdentifier: "klikCell", sender: self)
+        }
+        
+        if tableView == prevTableView{
+            self.indexThree = indexPath.row
+            performSegue(withIdentifier: "klikFinished", sender: self)
+        }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "klikCell"{
-            if let dest = segue.destination as? cobaCoba{
+            if let dest = segue.destination as? ResearchProgressController{
                 
                 dest.resName = onGoing.reversed()[indexTwo].name ?? "New Research"
                 dest.resObj = onGoing.reversed()[indexTwo].objective ?? ""
+                
+            }
+        }
+        
+        if segue.identifier == "klikFinished"{
+            if let dest = segue.destination as? ResearchProgressController{
+                
+                dest.resName = filtered.reversed()[indexThree].name ?? "New Research"
+                dest.resObj = filtered.reversed()[indexThree].objective ?? ""
                 
             }
         }
@@ -261,6 +277,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func tapPrev(){
         performSegue(withIdentifier: "prevSegue", sender: self)
+    }
+    
+    @IBAction func newResc(){
+        performSegue(withIdentifier: "newResSegue", sender: self)
     }
     
 }
