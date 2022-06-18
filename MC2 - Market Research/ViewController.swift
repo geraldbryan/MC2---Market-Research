@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var emptyAllImage: UIImageView!
     
     let images = ["motivation2.png","motivation1.png","motivation3.png"]
+    var indexTwo = 0
     
     override func viewDidAppear(_ animated: Bool) {
         getAllItems()
@@ -48,11 +49,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.pageControl.currentPage = 0
         let timers = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         timers.fire()
-
+        
         // Tableview - On going
         self.tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "item_cell")
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.allowsSelection = true
         
         // Tableview - Previous
         self.prevTableView.register(UINib(nibName: "previousTableViewCell", bundle: nil), forCellReuseIdentifier: "prev_cell")
@@ -65,13 +67,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //deleteAllData("Research")
         
         // Do any additional setup after loading the view
-
+        
     }
     
     var index = 0
     @objc func update()  {
         index = index + 1
-
+        
         if index >= images.count {
             index = 0
         }
@@ -174,53 +176,53 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Table view funtion
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == tableView,
-                let cell = tableView.dequeueReusableCell(withIdentifier: "item_cell") as? TableViewCell {
-                
-                let model = onGoing.reversed()[indexPath.row]
-        
-                let formatter = DateFormatter()
-                formatter.dateFormat = "MMM d, yyyy"
-        
-                let strDeadline = formatter.string(from: model.deadline!)
-        
-                cell.researchName?.text = model.name
-                cell.researchObjective?.text = "Deadline: \(strDeadline)"
-        
-                return cell
+           let cell = tableView.dequeueReusableCell(withIdentifier: "item_cell") as? TableViewCell {
             
-            } else if tableView == prevTableView,
-                let cell = tableView.dequeueReusableCell(withIdentifier: "prev_cell") as? previousTableViewCell {
+            let model = onGoing.reversed()[indexPath.row]
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMM d, yyyy"
+            
+            let strDeadline = formatter.string(from: model.deadline!)
+            
+            cell.researchName?.text = model.name
+            cell.researchObjective?.text = "Deadline: \(strDeadline)"
+            
+            return cell
+            
+        } else if tableView == prevTableView,
+                  let cell = tableView.dequeueReusableCell(withIdentifier: "prev_cell") as? previousTableViewCell {
+            
+            let model = filtered.reversed()[indexPath.row]
+            
+            cell.researchName?.text = model.name
+            
+            return cell
+        }
         
-                let model = filtered.reversed()[indexPath.row]
-        
-                cell.researchName?.text = model.name
-        
-                return cell
-            }
-
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count:Int?
-                
-                if tableView == self.tableView {
-                    if onGoing.count <= 2{
-                        count = onGoing.count
-                    } else {
-                        count = 2
-                    }
-                }
-                
-                if tableView == self.prevTableView {
-                    if filtered.count <= 2 {
-                        count = filtered.count
-                    } else {
-                        count = 2
-                    }
-                }
-                
-                return count!
+        
+        if tableView == self.tableView {
+            if onGoing.count <= 2{
+                count = onGoing.count
+            } else {
+                count = 2
+            }
+        }
+        
+        if tableView == self.prevTableView {
+            if filtered.count <= 2 {
+                count = filtered.count
+            } else {
+                count = 2
+            }
+        }
+        
+        return count!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -237,51 +239,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return tinggi!
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//        return "On Going Research"
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        self.indexTwo = indexPath.row
+        performSegue(withIdentifier: "klikCell", sender: self)
+    }
     
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-      if let headerView = view as? UITableViewHeaderFooterView {
-          headerView.contentView.backgroundColor = .white
-          headerView.textLabel?.textColor = .black
-          headerView.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-      }
-  }
-//
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//
-//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
-//
-//            let alert = UIAlertController(title: "Delete Research", message: "Are you sure you want to delete this research?", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
-//
-//                let deleteObject = self.models[indexPath.row]
-//                self.context.delete(deleteObject)
-//
-//                do
-//                {
-//                    try self.context.save()
-//                    self.getAllItems()
-//                }
-//
-//                catch
-//                {
-//
-//                }
-//            }))
-//
-//            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { _ in
-//                alert.dismiss(animated: true)
-//            }))
-//
-//            self.present(alert, animated: true)
-//        }
-//        return UISwipeActionsConfiguration(actions: [deleteAction])
-//    }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "klikCell"{
+            if let dest = segue.destination as? cobaCoba{
+                
+                dest.resName = onGoing.reversed()[indexTwo].name ?? "New Research"
+                dest.resObj = onGoing.reversed()[indexTwo].objective ?? ""
+                
+            }
+        }
+    }
+    @IBAction func tapOnGoing(){
+        performSegue(withIdentifier: "onGoingSegue", sender: self)
+    }
+    
+    @IBAction func tapPrev(){
+        performSegue(withIdentifier: "prevSegue", sender: self)
+    }
     
 }
-
