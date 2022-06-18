@@ -27,33 +27,68 @@ func initData() {
 
 
 
-class ResearchProgressController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class ResearchProgressController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate  {
+    
     @IBOutlet weak var researchProjectTableView: UITableView!
+    @IBOutlet weak var stepsScrollView : UIScrollView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
         initData()
         researchProjectTableView.register(UINib(nibName: "ResearchProjectCell", bundle: nil), forCellReuseIdentifier: "rp_cell")
+        researchProjectTableView.register(UINib(nibName: "nameObjectiveCell", bundle: nil), forCellReuseIdentifier: "nameObj_cell")
         researchProjectTableView.dataSource = self
         researchProjectTableView.delegate = self
+        //tableHeight.constant = self.view.frame.height-64
 
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        researchProjectTableView.rowHeight = 125
-        return 5
+
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "nameObj_cell", for: indexPath) as! nameObjectiveCell
+            //researchProjectTableView.rowHeight = 190
+            return cell
+        }
+        //researchProjectTableView.rowHeight = 169
         let cell = tableView.dequeueReusableCell(withIdentifier: "rp_cell", for: indexPath) as! ResearchProjectCell
-        let model = researchPage[indexPath.row]
+        let model = researchPage[indexPath.row-1]
         cell.researchStepName.text = model.stepName
-        cell.researchStepProgress.text = "test"
         cell.researchStepImage.image = model.imageVector
+        //cell.researchProgress.image = UIImage.
+        if model.stepName == "SWOT Analysis"{
+            cell.researchProjectView.backgroundColor = UIColor.green
+        }
+        else if model.stepName == "Target Market Analysis"{
+            cell.researchProjectView.backgroundColor = UIColor.yellow
+        }
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height : CGFloat
+        if indexPath.row == 0 {
+            height = 190
+        }else {
+            height = 140
+        }
+        return height
+        }
+
+
+        // just use the layer's shadow... adding the Bezier
+        //let shadowPath = UIBezierPath(roundedRect: innerView.bounds, cornerRadius: cornerRadius)
+        //innerView.layer.shadowPath = shadowPath.cgPath
+
+
+    
     
 
     
