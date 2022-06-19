@@ -10,6 +10,7 @@ import UIKit
 class StepDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var finishButton: UIButton!
     var step = researchStep()
     
     override func viewDidLoad() {
@@ -29,6 +30,12 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         table.separatorStyle = UITableViewCell.SeparatorStyle.none
         
     }
+    
+    //IBActions
+    @IBAction func goBackToProgress(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     //table functions
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

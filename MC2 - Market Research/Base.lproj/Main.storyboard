@@ -388,6 +388,9 @@
                                         <rect key="frame" x="20" y="18" width="350" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Finish the Research"/>
+                                        <connections>
+                                            <action selector="goBackToProgress:" destination="vlb-1d-Jhm" eventType="touchUpInside" id="6Dl-VD-SDO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -413,6 +416,7 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="0BC-UA-X6D"/>
                     <connections>
+                        <outlet property="finishButton" destination="JNz-ad-SGv" id="hpf-iy-PwM"/>
                         <outlet property="table" destination="Kd3-G9-xFR" id="cov-AO-O1I"/>
                         <segue destination="7YA-l0-oeu" kind="show" identifier="detailToResources" id="Opf-XA-zdi"/>
                     </connections>
