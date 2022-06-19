@@ -419,11 +419,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Np-Bm-MuE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.384615384615383" y="891.46919431279616"/>
+            <point key="canvasLocation" x="1665" y="823"/>
         </scene>
-    </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="CrJ-hE-g08"/>
         <!--On Going Research Controller View Controller-->
         <scene sceneID="ZD8-Z9-8GQ">
             <objects>
@@ -490,7 +487,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MV8-Xi-xxK"/>
+        <segue reference="ZhK-oA-bQO"/>
+        <segue reference="pWM-ba-Dmn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>

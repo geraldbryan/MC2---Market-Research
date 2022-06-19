@@ -245,7 +245,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.indexTwo = indexPath.row
             performSegue(withIdentifier: "klikCell", sender: self)
         }
-        
         if tableView == prevTableView{
             self.indexThree = indexPath.row
             performSegue(withIdentifier: "klikFinished", sender: self)
