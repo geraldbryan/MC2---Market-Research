@@ -87,7 +87,9 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ProgressToStepDetail", sender: self)
+        if indexPath.row > 0 {
+            performSegue(withIdentifier: "ProgressToStepDetail", sender: self)
+        }
     }
     
     
