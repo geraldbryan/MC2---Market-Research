@@ -86,14 +86,19 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         return height
         }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ProgressToStepDetail", sender: self)
     }
-    */
+    
+    
+    //segue prepare
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProgressToStepDetail" {
+            if let newVC = segue.destination as? StepDetailViewController {
+                let index = researchProjectTableView.indexPathForSelectedRow
+                newVC.step = researchPage[index!.row-1]
+            }
+        }
+    }
 
 }

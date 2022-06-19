@@ -84,6 +84,7 @@
                     <connections>
                         <outlet property="researchProjectTableView" destination="oDz-7e-gDN" id="mJu-Cj-DUi"/>
                         <outlet property="stepsScrollView" destination="rAz-9x-FwC" id="Ldk-dz-TdC"/>
+                        <segue destination="vlb-1d-Jhm" kind="show" identifier="ProgressToStepDetail" id="zIs-wo-79d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnH-VH-nV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -377,11 +378,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kd3-G9-xFR">
-                                <rect key="frame" x="0.0" y="44" width="390" height="699"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="655"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="699" id="jw0-6p-rZt"/>
-                                </constraints>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEs-hC-FiH">
                                 <rect key="frame" x="0.0" y="743" width="390" height="67"/>
@@ -409,17 +407,29 @@
                             <constraint firstItem="Kd3-G9-xFR" firstAttribute="trailing" secondItem="0sa-ti-i3t" secondAttribute="trailing" id="Q1w-HG-NcG"/>
                             <constraint firstItem="sEs-hC-FiH" firstAttribute="trailing" secondItem="0sa-ti-i3t" secondAttribute="trailing" id="VDQ-3e-mE0"/>
                             <constraint firstItem="sEs-hC-FiH" firstAttribute="leading" secondItem="0sa-ti-i3t" secondAttribute="leading" id="WXn-o8-dXJ"/>
+                            <constraint firstItem="sEs-hC-FiH" firstAttribute="top" secondItem="Kd3-G9-xFR" secondAttribute="bottom" id="Xnb-qm-x3i"/>
                             <constraint firstItem="Kd3-G9-xFR" firstAttribute="leading" secondItem="0sa-ti-i3t" secondAttribute="leading" id="w89-Wb-KbU"/>
-                            <constraint firstItem="sEs-hC-FiH" firstAttribute="top" secondItem="Kd3-G9-xFR" secondAttribute="bottom" id="x4R-WQ-QLY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="0BC-UA-X6D"/>
                     <connections>
                         <outlet property="table" destination="Kd3-G9-xFR" id="cov-AO-O1I"/>
+                        <segue destination="7YA-l0-oeu" kind="show" identifier="detailToResources" id="Opf-XA-zdi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Np-Bm-MuE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="823"/>
+            <point key="canvasLocation" x="-866.15384615384608" y="1563.9810426540284"/>
+        </scene>
+        <!--ResourcesPage-->
+        <scene sceneID="dRQ-oN-C0b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ResourcesPage" id="7YA-l0-oeu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZYl-Nt-xDB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="flb-Hk-BUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15" y="1564"/>
         </scene>
         <!--On Going Research Controller View Controller-->
         <scene sceneID="ZD8-Z9-8GQ">
@@ -487,8 +497,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZhK-oA-bQO"/>
-        <segue reference="pWM-ba-Dmn"/>
+        <segue reference="MV8-Xi-xxK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>

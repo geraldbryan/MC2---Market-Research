@@ -15,8 +15,9 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
         return UINib(nibName: "ToolsAndResourcesTableViewCell", bundle: nil)
     }
     
-    private var models = [Research]()
+    private var models = researchStep()
     @IBOutlet weak var toolCollectionView: UICollectionView!
+    @IBOutlet weak var toolDetailLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,8 +33,9 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
         // Configure the view for the selected state
     }
     
-    public func configure(with model: [Research]){
+    public func configure(with model: researchStep){
         self.models = model
+        self.toolDetailLabel.text = model.resourceTools
         toolCollectionView.reloadData()
     }
     
@@ -44,7 +46,7 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ToolsAndResourcesCollectionViewCell.identifier, for: indexPath) as! ToolsAndResourcesCollectionViewCell
-        cell.configure(image: UIImage(named: "marketing")!, name: "collection label")
+        cell.configure(image: models.imageVector!, name: models.stepName!)
         return cell
     }
     
