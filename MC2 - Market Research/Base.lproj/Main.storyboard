@@ -368,6 +368,62 @@
             </objects>
             <point key="canvasLocation" x="815.94202898550736" y="48.883928571428569"/>
         </scene>
+        <!--Step Detail-->
+        <scene sceneID="ITR-pY-3u0">
+            <objects>
+                <viewController id="vlb-1d-Jhm" userLabel="Step Detail" customClass="StepDetailViewController" customModule="MC2___Market_Research" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wDW-XV-cqR">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kd3-G9-xFR">
+                                <rect key="frame" x="0.0" y="44" width="390" height="699"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="699" id="jw0-6p-rZt"/>
+                                </constraints>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEs-hC-FiH">
+                                <rect key="frame" x="0.0" y="743" width="390" height="67"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNz-ad-SGv">
+                                        <rect key="frame" x="20" y="18" width="350" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Finish the Research"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="JNz-ad-SGv" firstAttribute="top" secondItem="sEs-hC-FiH" secondAttribute="top" constant="18" id="15J-eT-3cG"/>
+                                    <constraint firstItem="JNz-ad-SGv" firstAttribute="leading" secondItem="sEs-hC-FiH" secondAttribute="leading" constant="20" id="IyU-2k-oqZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="JNz-ad-SGv" secondAttribute="trailing" constant="20" id="blX-vc-7SS"/>
+                                    <constraint firstAttribute="bottom" secondItem="JNz-ad-SGv" secondAttribute="bottom" constant="18" id="rAT-Sp-tvb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0sa-ti-i3t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sEs-hC-FiH" firstAttribute="bottom" secondItem="0sa-ti-i3t" secondAttribute="bottom" id="5vh-ho-usq"/>
+                            <constraint firstItem="Kd3-G9-xFR" firstAttribute="top" secondItem="0sa-ti-i3t" secondAttribute="top" id="Kxw-LN-IGE"/>
+                            <constraint firstItem="Kd3-G9-xFR" firstAttribute="trailing" secondItem="0sa-ti-i3t" secondAttribute="trailing" id="Q1w-HG-NcG"/>
+                            <constraint firstItem="sEs-hC-FiH" firstAttribute="trailing" secondItem="0sa-ti-i3t" secondAttribute="trailing" id="VDQ-3e-mE0"/>
+                            <constraint firstItem="sEs-hC-FiH" firstAttribute="leading" secondItem="0sa-ti-i3t" secondAttribute="leading" id="WXn-o8-dXJ"/>
+                            <constraint firstItem="Kd3-G9-xFR" firstAttribute="leading" secondItem="0sa-ti-i3t" secondAttribute="leading" id="w89-Wb-KbU"/>
+                            <constraint firstItem="sEs-hC-FiH" firstAttribute="top" secondItem="Kd3-G9-xFR" secondAttribute="bottom" id="x4R-WQ-QLY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="Kd3-G9-xFR" id="cov-AO-O1I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Np-Bm-MuE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15.384615384615383" y="891.46919431279616"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CrJ-hE-g08"/>
         <!--On Going Research Controller View Controller-->
         <scene sceneID="ZD8-Z9-8GQ">
             <objects>
