@@ -1,14 +1,13 @@
 //
-//  TableViewCell.swift
+//  onGoingTableViewCell.swift
 //  MC2 - Market Research
 //
-//  Created by Gerald Bryan on 11/06/22.
+//  Created by Gerald Bryan on 15/06/22.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-    
+class onGoingTableViewCell: UITableViewCell {
     @IBOutlet var researchName: UILabel!
     @IBOutlet var researchObjective: UILabel!
     @IBOutlet var innerView: UIView!
@@ -24,8 +23,7 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
+   
     override func layoutSubviews() {
 
         // just use the layer's shadow... adding the Bezier
@@ -47,6 +45,4 @@ class TableViewCell: UITableViewCell {
         var transform : CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 4.0)
         progress.transform = transform
 }
-
-
 }

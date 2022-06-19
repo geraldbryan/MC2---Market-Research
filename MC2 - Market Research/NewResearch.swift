@@ -41,7 +41,7 @@ class NewResearch: UIViewController {
         let newItem = Research(context: context)
         
         newItem.name = resName.text
-        //newItem.objective = resObj.text
+        newItem.objective = resObj.text
         newItem.deadline = resDead.date
         
         do{
