@@ -8,9 +8,7 @@
 import UIKit
 
 class nameObjectiveCell: UITableViewCell {
-    @IBOutlet weak var outsideResearchName : UIView!
     @IBOutlet weak var InsideResearchName : UIView!
-    @IBOutlet weak var outsideObjectiveName : UIView!
     @IBOutlet weak var insideObjectiveName : UIView!
     @IBOutlet weak var researchNameIC : UILabel!
     @IBOutlet weak var researchObjIC : UILabel!
@@ -26,19 +24,28 @@ class nameObjectiveCell: UITableViewCell {
         // Configure the view for the selected state
     }
     override func layoutSubviews() {
+        researchNameIC.numberOfLines = 0
+        researchNameIC.lineBreakMode = .byWordWrapping
+        self.researchNameIC.sizeToFit()
+        self.researchNameIC.layoutIfNeeded()
+        
+        researchObjIC.numberOfLines = 0
+        researchObjIC.lineBreakMode = .byWordWrapping
+        self.researchObjIC.sizeToFit()
+        self.researchObjIC.layoutIfNeeded()
+        
 
-        // just use the layer's shadow... adding the Bezier
-        //let shadowPath = UIBezierPath(roundedRect: innerView.bounds, cornerRadius: cornerRadius)
-        //innerView.layer.shadowPath = shadowPath.cgPath
-
-        outsideResearchName.layer.cornerRadius = 12
-        outsideResearchName.layer.masksToBounds = false
+        // Research Name
         InsideResearchName.layer.cornerRadius = 12
         InsideResearchName.layer.masksToBounds = false
-        outsideObjectiveName.layer.cornerRadius = 12
-        outsideObjectiveName.layer.masksToBounds = false
+        InsideResearchName.layer.borderWidth = 1
+        InsideResearchName.layer.borderColor = UIColor(red: 77/255, green: 90/255, blue: 130/255, alpha: 1).cgColor
+        
+        // Research objectives
         insideObjectiveName.layer.cornerRadius = 12
         insideObjectiveName.layer.masksToBounds = false
+        insideObjectiveName.layer.borderWidth = 1
+        insideObjectiveName.layer.borderColor = UIColor(red: 77/255, green: 90/255, blue: 130/255, alpha: 1).cgColor
     }
     
 }
