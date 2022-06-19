@@ -12,6 +12,7 @@ class ResourceHeadingTableViewCell: UITableViewCell {
     @IBOutlet weak var resourceHeadingImage: UIImageView!
     @IBOutlet weak var resourceTitleLabel: UILabel!
     @IBOutlet weak var resourceImageLabel: UILabel!
+    @IBOutlet weak var headingParagraph: UILabel!
     
     static let identifier: String = "ResourceHeadingTableViewCell"
     
@@ -30,10 +31,11 @@ class ResourceHeadingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func configure(image: UIImage, title: String, imageText: String){
+    public func configure(image: UIImage, title: String, imageText: String, description: String){
         resourceHeadingImage.image = image
         resourceTitleLabel.text = title
         resourceImageLabel.text = imageText
+        headingParagraph.text = description
     }
     
 }

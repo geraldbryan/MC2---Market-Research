@@ -26,7 +26,10 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ResourceHeadingTableViewCell.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ResourceHeadingTableViewCell.identifier, for: indexPath) as! ResourceHeadingTableViewCell
+        cell.resourceTitleLabel.text = "SWOT Analysis"
+        cell.resourceImageLabel.text = "Photo by: unsplash"
+        cell.headingParagraph.text = "SWOT analysis is a technique for assessing the performance, competition, risk, and potential of a business, as well as part of a business such as a product line or division, an industry, or other entity. Using internal and external data, the technique can guide businesses toward strategies more likely to be successful, and away from those in which they have been, or are likely to be, less successful. Independent SWOT analysis, investors, or competitors can also guide them on whether a company, product line, or industry might be strong or weak and why."
         return cell
     }
     
