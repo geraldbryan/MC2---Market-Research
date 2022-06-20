@@ -16,6 +16,8 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
     }
     
     private var models = researchStep()
+    
+    
     @IBOutlet weak var toolCollectionView: UICollectionView!
     @IBOutlet weak var toolDetailLabel: UILabel!
     
@@ -46,6 +48,7 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ToolsAndResourcesCollectionViewCell.identifier, for: indexPath) as! ToolsAndResourcesCollectionViewCell
+
         cell.configure(image: models.imageVector!, name: models.stepName!)
         return cell
     }
@@ -54,6 +57,8 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
         return CGSize(width: 250, height: 250)
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
     
 }
