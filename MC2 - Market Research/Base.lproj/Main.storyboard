@@ -57,6 +57,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Finish the Research"/>
                                         <connections>
+                                            <action selector="finishButtonAction:" destination="PNq-E0-k4w" eventType="touchUpInside" id="K4e-J6-hon"/>
                                             <action selector="goBackToProgress:" destination="vlb-1d-Jhm" eventType="touchUpInside" id="Zf9-FC-o6i"/>
                                         </connections>
                                     </button>
@@ -94,6 +95,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="finishButton" destination="om5-Qa-Kqd" id="oQE-SH-Ive"/>
                         <outlet property="researchProjectTableView" destination="oDz-7e-gDN" id="mJu-Cj-DUi"/>
                         <segue destination="vlb-1d-Jhm" kind="show" identifier="ProgressToStepDetail" id="zIs-wo-79d"/>
                     </connections>
