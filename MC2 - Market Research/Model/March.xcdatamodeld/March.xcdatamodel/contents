@@ -5,7 +5,21 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="objective" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Result" representedClassName="Result" syncable="YES" codeGenerationType="class">
+        <attribute name="comp_finished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="comp_result" optional="YES" attributeType="String"/>
+        <attribute name="marketing_finished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="marketing_result" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="swot_finished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="swot_result" optional="YES" attributeType="String"/>
+        <attribute name="target_finished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="target_result" optional="YES" attributeType="String"/>
+        <attribute name="trend_finished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="trend_result" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Research" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Result" positionX="277.18359375" positionY="-194.6875" width="128" height="208"/>
     </elements>
 </model>
