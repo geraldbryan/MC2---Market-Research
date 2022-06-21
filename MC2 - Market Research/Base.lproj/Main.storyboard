@@ -32,25 +32,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hpf-Pz-QDj">
-                                <rect key="frame" x="16" y="741" width="358" height="69"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="om5-Qa-Kqd">
-                                        <rect key="frame" x="20" y="18" width="150.33333333333334" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Finish the Research"/>
-                                        <connections>
-                                            <action selector="goBackToProgress:" destination="vlb-1d-Jhm" eventType="touchUpInside" id="Zf9-FC-o6i"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oDz-7e-gDN">
+                                <rect key="frame" x="0.0" y="140" width="390" height="598"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oDz-7e-gDN">
-                                <rect key="frame" x="0.0" y="106" width="390" height="632"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="598" id="p9n-ud-LmB"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="125" id="Wk3-Ne-VrI">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="125"/>
@@ -62,13 +49,38 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpf-Pz-QDj">
+                                <rect key="frame" x="0.0" y="738" width="390" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="om5-Qa-Kqd">
+                                        <rect key="frame" x="20" y="21" width="350" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Finish the Research"/>
+                                        <connections>
+                                            <action selector="goBackToProgress:" destination="vlb-1d-Jhm" eventType="touchUpInside" id="Zf9-FC-o6i"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="om5-Qa-Kqd" secondAttribute="bottom" constant="20" id="En6-gT-Mf5"/>
+                                    <constraint firstItem="om5-Qa-Kqd" firstAttribute="leading" secondItem="Hpf-Pz-QDj" secondAttribute="leading" constant="20" id="IZ3-Tk-1dh"/>
+                                    <constraint firstAttribute="trailing" secondItem="om5-Qa-Kqd" secondAttribute="trailing" constant="20" id="P2c-9F-20B"/>
+                                    <constraint firstAttribute="height" constant="72" id="V6M-3J-fuB"/>
+                                    <constraint firstItem="om5-Qa-Kqd" firstAttribute="top" secondItem="Hpf-Pz-QDj" secondAttribute="top" constant="21" id="Yt2-oL-xNT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="epo-At-jBO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="epo-At-jBO" firstAttribute="bottom" secondItem="Hpf-Pz-QDj" secondAttribute="bottom" id="3oD-3J-o5X"/>
-                            <constraint firstItem="Hpf-Pz-QDj" firstAttribute="leading" secondItem="epo-At-jBO" secondAttribute="leading" constant="16" id="dql-Qo-BCV"/>
-                            <constraint firstItem="epo-At-jBO" firstAttribute="trailing" secondItem="Hpf-Pz-QDj" secondAttribute="trailing" constant="16" id="gQ6-gC-LOM"/>
+                            <constraint firstItem="epo-At-jBO" firstAttribute="bottom" secondItem="Hpf-Pz-QDj" secondAttribute="bottom" id="C2v-y3-Ipj"/>
+                            <constraint firstItem="epo-At-jBO" firstAttribute="trailing" secondItem="Hpf-Pz-QDj" secondAttribute="trailing" id="GLn-pH-aiQ"/>
+                            <constraint firstItem="oDz-7e-gDN" firstAttribute="trailing" secondItem="epo-At-jBO" secondAttribute="trailing" id="Iva-rZ-8Ch"/>
+                            <constraint firstItem="oDz-7e-gDN" firstAttribute="leading" secondItem="epo-At-jBO" secondAttribute="leading" id="KdR-ya-E7w"/>
+                            <constraint firstItem="Hpf-Pz-QDj" firstAttribute="leading" secondItem="epo-At-jBO" secondAttribute="leading" id="Tg7-WQ-VwP"/>
+                            <constraint firstItem="Hpf-Pz-QDj" firstAttribute="top" secondItem="oDz-7e-gDN" secondAttribute="bottom" id="dQ0-pN-YPP"/>
+                            <constraint firstItem="oDz-7e-gDN" firstAttribute="top" secondItem="epo-At-jBO" secondAttribute="top" id="kTs-bZ-XRf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IjA-qW-QQw">
@@ -311,7 +323,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" smartDashesType="yes"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="WJE-oV-uZu">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="WJE-oV-uZu">
                                 <rect key="frame" x="232" y="269.33333333333331" width="138" height="31"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htx-gX-UkP">
@@ -350,6 +362,7 @@
                             <constraint firstItem="sLX-QF-9sa" firstAttribute="leading" secondItem="fno-Lx-m6s" secondAttribute="leading" constant="20" id="eps-ij-cvD"/>
                             <constraint firstItem="sLX-QF-9sa" firstAttribute="centerY" secondItem="WJE-oV-uZu" secondAttribute="centerY" id="gmF-DB-nc5"/>
                             <constraint firstItem="hlo-0Y-Es4" firstAttribute="top" secondItem="Eyy-gL-YJR" secondAttribute="bottom" constant="8" symbolic="YES" id="gmu-Va-99u"/>
+                            <constraint firstItem="WJE-oV-uZu" firstAttribute="leading" secondItem="sLX-QF-9sa" secondAttribute="trailing" constant="86" id="jQX-YV-9En"/>
                             <constraint firstItem="fno-Lx-m6s" firstAttribute="trailing" secondItem="hlo-0Y-Es4" secondAttribute="trailing" constant="20" id="mjC-xA-nUW"/>
                             <constraint firstItem="fno-Lx-m6s" firstAttribute="trailing" secondItem="Htx-gX-UkP" secondAttribute="trailing" constant="20" id="pbN-dM-HfS"/>
                             <constraint firstItem="NyL-hI-aFf" firstAttribute="leading" secondItem="fno-Lx-m6s" secondAttribute="leading" constant="20" id="tPJ-38-xHr"/>
