@@ -25,6 +25,7 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
     
     @IBOutlet weak var toolCollectionView: UICollectionView!
     @IBOutlet weak var toolDetailLabel: UILabel!
+    @IBOutlet weak var toolTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +33,7 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
         toolCollectionView.register(ToolsAndResourcesCollectionViewCell.nib(), forCellWithReuseIdentifier: ToolsAndResourcesCollectionViewCell.identifier)
         toolCollectionView.delegate = self
         toolCollectionView.dataSource = self
+        toolTitleLabel.textColor = UIColor(named: "colorTesting")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -429,7 +429,7 @@
         <scene sceneID="dRQ-oN-C0b">
             <objects>
                 <viewControllerPlaceholder storyboardName="ResourcesPage" id="7YA-l0-oeu" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ZYl-Nt-xDB"/>
+                    <navigationItem key="navigationItem" title="Test" id="ZYl-Nt-xDB"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flb-Hk-BUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
