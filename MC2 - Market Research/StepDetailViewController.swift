@@ -62,6 +62,7 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ToolsAndResourcesTableViewCell.identifier, for: indexPath) as! ToolsAndResourcesTableViewCell
+            cell.delegate = self
             cell.selectionStyle = .none
             cell.configure(with: step)
             return cell
@@ -89,5 +90,10 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
     }
-    
+}
+
+extension StepDetailViewController: TriggerCollectionViewDelegate{
+    func getCellRow(_ cellIndex: Int) {
+        performSegue(withIdentifier: "detailToResources", sender: self)
+    }
 }

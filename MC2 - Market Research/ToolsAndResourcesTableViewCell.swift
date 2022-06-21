@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol TriggerCollectionViewDelegate{
+    func getCellRow(_ cellIndex: Int)
+}
+
 class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    var delegate: TriggerCollectionViewDelegate?
     
     static let identifier: String = "ToolsAndResourcesTableViewCell"
     
@@ -16,7 +22,6 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
     }
     
     private var models = researchStep()
-    
     
     @IBOutlet weak var toolCollectionView: UICollectionView!
     @IBOutlet weak var toolDetailLabel: UILabel!
@@ -59,6 +64,8 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        delegate?.getCellRow(indexPath.row)
+        print(delegate as Any)
     }
     
 }
