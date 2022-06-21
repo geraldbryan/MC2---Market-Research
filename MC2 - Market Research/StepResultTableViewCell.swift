@@ -20,6 +20,9 @@ class StepResultTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        resultLabel.textColor = UIColor(named: "colorTesting")
+        resultTextView.layer.borderWidth = 0.4
+        resultTextView.layer.cornerRadius = 10
         // Initialization code
     }
 

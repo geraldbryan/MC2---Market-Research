@@ -20,6 +20,8 @@ class StepDescriptionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLabel.textColor = UIColor(named: "colorTesting")
+        
         // Initialization code
     }
 
