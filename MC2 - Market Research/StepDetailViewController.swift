@@ -92,6 +92,8 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 }
 
+
+//delegate
 extension StepDetailViewController: TriggerCollectionViewDelegate{
     func getCellRow(_ cellIndex: Int) {
         performSegue(withIdentifier: "detailToResources", sender: self)
