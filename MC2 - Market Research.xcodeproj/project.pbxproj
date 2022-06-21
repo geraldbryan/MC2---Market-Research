@@ -29,6 +29,7 @@
 		26EC2364285F6DD9000C333B /* ResourceOneParagraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC2362285F6DD9000C333B /* ResourceOneParagraphTableViewCell.swift */; };
 		26EC2365285F6DD9000C333B /* ResourceOneParagraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26EC2363285F6DD9000C333B /* ResourceOneParagraphTableViewCell.xib */; };
 		26EC2369285F6FDC000C333B /* ResourcesPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26EC2368285F6FDC000C333B /* ResourcesPage.storyboard */; };
+		9002E7DA28621E44008A1C27 /* demographicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002E7D928621E43008A1C27 /* demographicViewController.swift */; };
 		90719BFE285AD41200AAB3CC /* finishedResearchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90719BFD285AD41200AAB3CC /* finishedResearchedViewController.swift */; };
 		90719C01285AD47300AAB3CC /* finishedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90719BFF285AD47300AAB3CC /* finishedTableViewCell.swift */; };
 		90719C02285AD47300AAB3CC /* finishedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90719C00285AD47300AAB3CC /* finishedTableViewCell.xib */; };
@@ -95,6 +96,7 @@
 		26EC2362285F6DD9000C333B /* ResourceOneParagraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceOneParagraphTableViewCell.swift; sourceTree = "<group>"; };
 		26EC2363285F6DD9000C333B /* ResourceOneParagraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResourceOneParagraphTableViewCell.xib; sourceTree = "<group>"; };
 		26EC2368285F6FDC000C333B /* ResourcesPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResourcesPage.storyboard; sourceTree = "<group>"; };
+		9002E7D928621E43008A1C27 /* demographicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demographicViewController.swift; sourceTree = "<group>"; };
 		90719BFD285AD41200AAB3CC /* finishedResearchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finishedResearchedViewController.swift; sourceTree = "<group>"; };
 		90719BFF285AD47300AAB3CC /* finishedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finishedTableViewCell.swift; sourceTree = "<group>"; };
 		90719C00285AD47300AAB3CC /* finishedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = finishedTableViewCell.xib; sourceTree = "<group>"; };
@@ -190,7 +192,6 @@
 				90CCD569285A30FE008D4F9A /* onGoingTableViewCell.swift */,
 				90CCD56A285A30FE008D4F9A /* onGoingTableViewCell.xib */,
 				90CCD567285A305A008D4F9A /* onGoingResearchControllerViewController.swift */,
-				90CCD55F2857380E008D4F9A /* marketResearchStep.swift */,
 				09A8B3B82857415900BB99CA /* ResearchProgressController.swift */,
 				09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */,
 				09A8B3B5285737E200BB99CA /* ResearchProjectCell.xib */,
@@ -218,6 +219,7 @@
 				26EC2362285F6DD9000C333B /* ResourceOneParagraphTableViewCell.swift */,
 				26EC2363285F6DD9000C333B /* ResourceOneParagraphTableViewCell.xib */,
 				26EC2368285F6FDC000C333B /* ResourcesPage.storyboard */,
+				9002E7D928621E43008A1C27 /* demographicViewController.swift */,
 			);
 			path = "MC2 - Market Research";
 			sourceTree = "<group>";
@@ -261,6 +263,7 @@
 				90CCD55028546CB0008D4F9A /* March.xcdatamodeld */,
 				90CCD5582854E3F6008D4F9A /* Research+CoreDataProperties.swift */,
 				90CCD5572854E3F6008D4F9A /* Research+CoreDataClass.swift */,
+				90CCD55F2857380E008D4F9A /* marketResearchStep.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				90A2DE90284E533D00B8F876 /* SceneDelegate.swift in Sources */,
 				09A8B3B92857415900BB99CA /* ResearchProgressController.swift in Sources */,
 				26AF7F71285F509D00EF601E /* ToolsAndResourcesTableViewCell.swift in Sources */,
+				9002E7DA28621E44008A1C27 /* demographicViewController.swift in Sources */,
 				90719BFE285AD41200AAB3CC /* finishedResearchedViewController.swift in Sources */,
 				26EC2364285F6DD9000C333B /* ResourceOneParagraphTableViewCell.swift in Sources */,
 				90CCD5562854CB85008D4F9A /* NewResearch.swift in Sources */,

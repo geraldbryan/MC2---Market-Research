@@ -241,11 +241,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        if tableView == tableView{
+        if tableView == self.tableView{
             self.indexTwo = indexPath.row
             performSegue(withIdentifier: "klikCell", sender: self)
-        }
-        if tableView == prevTableView{
+        } else {
             self.indexThree = indexPath.row
             performSegue(withIdentifier: "klikFinished", sender: self)
         }
@@ -259,9 +258,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 dest.resObj = onGoing.reversed()[indexTwo].objective ?? ""
                 
             }
-        }
-        
-        if segue.identifier == "klikFinished"{
+        } else {
             if let dest = segue.destination as? ResearchProgressController{
                 
                 dest.resName = filtered.reversed()[indexThree].name ?? "New Research"
@@ -280,6 +277,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func newResc(){
         performSegue(withIdentifier: "newResSegue", sender: self)
+    }
+    
+    @IBAction func newResearch(){
+        performSegue(withIdentifier: "emptyNew", sender: self)
     }
     
 }
