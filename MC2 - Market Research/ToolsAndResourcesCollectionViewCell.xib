@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +26,7 @@
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="YrI-sh-7FV"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" name="colorTesting"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -48,4 +49,9 @@
             <point key="canvasLocation" x="243.84615384615384" y="108.76777251184834"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="colorTesting">
+            <color red="0.30199998617172241" green="0.3529999852180481" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

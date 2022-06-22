@@ -21,6 +21,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         resourceTable.delegate = self
         resourceTable.dataSource = self
         resourceTable.separatorStyle = .none
+        resourceTable.allowsSelection = false
         // Do any additional setup after loading the view.
     }
     
