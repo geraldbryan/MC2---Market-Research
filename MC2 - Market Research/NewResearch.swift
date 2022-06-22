@@ -10,6 +10,7 @@ import UIKit
 class NewResearch: UIViewController {
     
     private var models = [Research]()
+    private var countId = [Dummy]()
     
     @IBOutlet var resObj: UITextField!
     @IBOutlet var resName: UITextField!
@@ -25,24 +26,24 @@ class NewResearch: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getAllItems()
         resObj.borderStyle = .roundedRect
         resName.borderStyle = .roundedRect
         // Do any additional setup after loading the view.
         
     }
     
-    @IBAction func changeDatePicker(){
-        
-        
-    }
-    
     @IBAction func tapSaveButton(){
         let newItem = Research(context: context)
+        let idCount = Dummy(context: context)
         
+        idCount.count = "initiate"
         newItem.name = resName.text
         newItem.objective = resObj.text
         newItem.deadline = resDead.date
+        
+        let identifier = countId.count
+        newItem.id = String(identifier)
         
         do{
             try context.save()
@@ -56,6 +57,7 @@ class NewResearch: UIViewController {
     func getAllItems(){
         do{
             models = try context.fetch(Research.fetchRequest())
+            countId = try context.fetch(Dummy.fetchRequest())
             
         } catch{
             

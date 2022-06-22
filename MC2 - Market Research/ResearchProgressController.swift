@@ -30,6 +30,7 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
     
     var resName = ""
     var resObj = ""
+    var resId = ""
     
     @IBOutlet weak var researchProjectTableView: UITableView!
 
@@ -116,6 +117,7 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
             if let newVC = segue.destination as? StepDetailViewController {
                 let index = researchProjectTableView.indexPathForSelectedRow
                 newVC.step = researchPage[index!.row-1]
+                newVC.researchId = resId
             }
         }
     }

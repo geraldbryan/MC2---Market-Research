@@ -8,14 +8,21 @@
 import UIKit
 
 class StepDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    private var result = [ResearchResult]()
+    
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var finishButton: UIButton!
     var step = researchStep()
     
+    var researchId = ""
+    
+    var stepResult: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getAllItems()
         self.title = step.stepName
         finishButton.isEnabled = false
         
@@ -34,7 +41,20 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //IBActions
     @IBAction func goBackToProgress(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        let newRes = ResearchResult(context: context)
+        
+        newRes.id = researchId
+        newRes.type = step.stepName
+        newRes.result = stepResult
+        
+        do{
+            try context.save()
+            getAllItems()
+            navigationController?.popViewController(animated: true)
+        } catch{
+            
+        }
+        
     }
     
     
@@ -92,6 +112,15 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
     }
+        
+    func getAllItems(){
+        do{
+            result = try context.fetch(ResearchResult.fetchRequest())
+            
+        } catch{
+            
+        }
+    }
 }
 
 
@@ -108,6 +137,8 @@ extension StepDetailViewController: StepResultTextViewDelegate{
         } else {
             finishButton.isEnabled = true
         }
+        
+        stepResult = text
     }
     
 //    func textViewState(isEmpty: Bool) {
