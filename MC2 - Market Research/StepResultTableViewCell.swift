@@ -7,8 +7,14 @@
 
 import UIKit
 
-class StepResultTableViewCell: UITableViewCell {
+protocol StepResultTextViewDelegate {
+    func textViewState(text: String)
+}
 
+class StepResultTableViewCell: UITableViewCell, UITextViewDelegate {
+
+    var delegateStepResult: StepResultTextViewDelegate?
+    
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultTextView: UITextView!
     
@@ -32,4 +38,19 @@ class StepResultTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        let text = textView.text ?? ""
+//        if text.isEmpty {
+//            delegateStepResult?.textViewState(isEmpty: true)
+//        } else {
+//            delegateStepResult?.textViewState(isEmpty: false)
+//        }
+        delegateStepResult?.textViewState(text: text)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Write your research results here..."{
+            textView.text = ""
+        }
+    }
 }

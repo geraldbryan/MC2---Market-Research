@@ -22,8 +22,9 @@ class ToolsAndResourcesCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.layer.borderColor = UIColor.systemBlue.cgColor
+        self.layer.borderColor = UIColor(named: "colorTesting")?.cgColor
         self.layer.cornerRadius = 8
+        self.layer.borderWidth = 1
     }
 
     public func configure(image: UIImage, name: String){
