@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +13,7 @@
         <scene sceneID="CJr-Qb-hrL">
             <objects>
                 <navigationController id="ycB-xt-FEi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FhS-sk-T9y"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="X8I-0R-WEs">
                         <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -186,6 +188,16 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yTy-1L-isb">
                                         <rect key="frame" x="13" y="30" width="308" height="325"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as2-0h-6Id">
+                                        <rect key="frame" x="56" y="363" width="222" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" name="colorTesting"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start New Research"/>
+                                        <connections>
+                                            <action selector="newResearch" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHq-pV-1S5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -277,11 +289,12 @@
                         <segue destination="tbJ-Vs-9xr" kind="show" identifier="onGoingSegue" id="Pbk-8Q-1fb"/>
                         <segue destination="OOB-ZR-ff3" kind="presentation" identifier="newResSegue" id="1kw-G6-KBQ"/>
                         <segue destination="PNq-E0-k4w" kind="show" identifier="klikFinished" id="af5-E9-Y6U"/>
+                        <segue destination="OOB-ZR-ff3" kind="presentation" identifier="emptyNew" id="zaY-e3-Iyg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="48"/>
+            <point key="canvasLocation" x="16.923076923076923" y="47.630331753554501"/>
         </scene>
         <!--New Research-->
         <scene sceneID="wW8-ls-osn">
@@ -339,7 +352,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="tapSaveButton" destination="OOB-ZR-ff3" eventType="touchUpInside" id="bQA-xc-k5E"/>
-                                    <segue destination="ycB-xt-FEi" kind="presentation" identifier="backToHome" modalPresentationStyle="fullScreen" id="CrJ-hE-g08"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -377,6 +389,7 @@
                         <outlet property="resName" destination="Ymf-yX-CvN" id="0rM-vx-XZZ"/>
                         <outlet property="resObj" destination="hlo-0Y-Es4" id="B3a-UY-bam"/>
                         <outlet property="saveResearch" destination="Htx-gX-UkP" id="Vyf-aV-Zgn"/>
+                        <segue destination="ycB-xt-FEi" kind="presentation" identifier="backToHome" modalPresentationStyle="fullScreen" id="0LL-Ey-Q8N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c91-lf-GDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -515,10 +528,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="zaY-e3-Iyg"/>
         <segue reference="bZ3-Je-dBS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <namedColor name="colorTesting">
+            <color red="0.30199998617172241" green="0.3529999852180481" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
