@@ -78,6 +78,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIl-QZ-GqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="895.6521739130435" y="34.821428571428569"/>
+        </scene>
         <!--User Persona Page-->
         <scene sceneID="W0r-0O-XEd">
             <objects>
