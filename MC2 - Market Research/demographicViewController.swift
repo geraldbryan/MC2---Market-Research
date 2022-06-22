@@ -15,6 +15,9 @@ class demographicViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.title = "Resource Page"
+        
         resourcesCit.text = "Source: https://extension.psu.edu/understanding-your-customers-how-demographics-and-psychographics-can-help"
         
         resourceTable.register(ResourceHeadingTableViewCell.nib(), forCellReuseIdentifier: ResourceHeadingTableViewCell.identifier)

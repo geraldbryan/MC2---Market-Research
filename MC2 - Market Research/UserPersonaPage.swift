@@ -10,11 +10,14 @@ import UIKit
 class UserPersonaPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var userPersonaTable: UITableView!
+    @IBOutlet weak var resourcesCit: UILabel!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.title = "Resource Page"
+        resourcesCit.text = "Source: https://airfocus.com/glossary/what-is-a-user-persona/"
         
         userPersonaTable.register(ResourceHeadingTableViewCell.nib(), forCellReuseIdentifier: ResourceHeadingTableViewCell.identifier)
         userPersonaTable.register(ResourceOneParagraphTableViewCell.nib(), forCellReuseIdentifier: ResourceOneParagraphTableViewCell.identifier)
@@ -27,40 +30,37 @@ class UserPersonaPage: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     //table functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: ResourceOneParagraphTableViewCell.identifier, for: indexPath) as! ResourceOneParagraphTableViewCell
-            cell.configure(title: "The Benefit Of User Persona", text: "Strengths describe what the business excels at and what separates it from the competition: a strong brand, loyal customer base, a strong balance sheet, unique technology, and so on.")
+            cell.configure(title: "The benefits of user personas", text: "A well-researched, analytical and data-driven user persona is hugely beneficial to a company's product development, sales strategies and marketing campaigns. The function of user personas is to ensure that company initiatives (such as marketing or product development), are done with the user very firmly in mind.With respect to product development, this means avoiding the development of unnecessary features or products, by referring back to the users genuine needs. Instead of developing what designers or engineers want to build, efforts are concentrated only on what a user persona would find useful or practical to have. User personas are further used to understand if the target audience will use and engage with a product in the expected or desired way.")
             return cell
         } else if indexPath.row == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: ResourceOneParagraphTableViewCell.identifier, for: indexPath) as! ResourceOneParagraphTableViewCell
-            cell.configure(title: "Examples of User Personas :", text: "Weaknesses stop the business from performing at its optimum level. They are areas where the business needs to improve to remain competitive: a weak brand, higher-than-average turnover, high levels of debt, an inadequate supply chain, or lack of capital.")
+            cell.configure(title: "Goal-directed personas:", text: "A goal-directed persona focuses on the methodology or approach that a user takes to solve a problem. By establishing the processes and workflows that a user would take, you aim to know how a user would use or engage with a product. This user persona is therefore associated with user experience (UX) and product development. ")
             return cell
         } else if indexPath.row == 3{
             let cell = tableView.dequeueReusableCell(withIdentifier: ResourceOneParagraphTableViewCell.identifier, for: indexPath) as! ResourceOneParagraphTableViewCell
-            cell.configure(title: "Goal-Directed Personas :", text: "Opportunities refer to favorable external factors that could give an organization a competitive advantage.")
+            cell.configure(title: "Role-based personas:", text: "A role-based persona understands where a persona is within an organization, and how that affects their behavior and decision making. This user persona aims to broaden out the view from a goal-directed perspective to one that looks at how a job function and environment will impact the demands from a product or service. ")
             return cell
         } else if indexPath.row == 4{
             let cell = tableView.dequeueReusableCell(withIdentifier: ResourceOneParagraphTableViewCell.identifier, for: indexPath) as! ResourceOneParagraphTableViewCell
-            cell.configure(title: "Role-Based Personas :", text: "Threats refer to factors that have the potential to harm an organization.")
+            cell.configure(title: "Engaging personas:", text: "Engaging user personas are a holistic view of a persona that gives designers as much as possible to engage with. This persona is fleshed out with characteristics ranging from emotions and social background to their psychology. Emphasis is put on creating stories that enable the persona to come to life. This strategy improves design processes by helping teams genuinely envisage a person, and therefore deliver a better product.")
             return cell
         } else if indexPath.row == 5{
             let cell = tableView.dequeueReusableCell(withIdentifier: ResourceOneParagraphTableViewCell.identifier, for: indexPath) as! ResourceOneParagraphTableViewCell
-            cell.configure(title: "Engaging Personas :", text: "Creating a SWOT analysis involves identifying and analyzing the strengths, weaknesses, opportunities, and threats of a company. It is recommended to first create a list of questions to answer for each element. The questions serve as a guide for completing the SWOT analysis and creating a balanced list. The SWOT framework can be constructed in list format, as free text, or, most commonly, as a 4-cell table, with quadrants dedicated to each element. Strengths and weaknesses are listed first, followed by opportunities and threats.")
-            return cell
-        } else if indexPath.row == 6{
-            let cell = tableView.dequeueReusableCell(withIdentifier: ResourceOneParagraphTableViewCell.identifier, for: indexPath) as! ResourceOneParagraphTableViewCell
-            cell.configure(title: "Persona Contents :", text: "Home Depot conducted a SWOT analysis, creating a balanced list of its internal advantages and disadvantages and external factors threatening its market position and growth strategy. High-quality customer service, strong brand recognition, and positive relationships with suppliers were some of its notable strengths; whereas, a constricted supply chain, interdependence on the U.S. market, and a replicable business model were listed as its weaknesses. Closely related to its weaknesses, Home Depot's threats were the presence of close rivals, available substitutes, and the condition of the U.S. market. It found from this study and other analysis that expanding its supply chain and global footprint would be key to its growth.")
+            cell.configure(title: "Persona contents:", text: "You can make your persona with: Headline, Fictional Pictures, Brief Description, Habits, Goals, Pain, Motivations, etc.")
             return cell
         }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: ResourceHeadingTableViewCell.identifier, for: indexPath) as! ResourceHeadingTableViewCell
         cell.resourceTitleLabel.text = "User Persona"
         cell.resourceImageLabel.text = "Photo by: unsplash"
-        cell.headingParagraph.text = "SWOT analysis is a technique for assessing the performance, competition, risk, and potential of a business, as well as part of a business such as a product line or division, an industry, or other entity. Using internal and external data, the technique can guide businesses toward strategies more likely to be successful, and away from those in which they have been, or are likely to be, less successful. Independent SWOT analysis, investors, or competitors can also guide them on whether a company, product line, or industry might be strong or weak and why."
+        cell.headingParagraph.text = "User personas are profiles of imagined individuals that reflect a business’ core customer base. User personas are written as if the individual were real, but at the same time, they reflect common attributes across a cohort of people. They are semi-fictional, in that they are not a specific individual, but their characteristics should be gathered from observation of real-world users. User personas are intended to give a reliable and realistic reflection of how a business could expect a group of people to engage with a product, service or campaign."
+        cell.resourceHeadingImage.image = UIImage(named: "user_persona.png")
         return cell
     }
     
