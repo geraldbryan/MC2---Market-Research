@@ -44,7 +44,7 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             let cell = tableView.dequeueReusableCell(withIdentifier: StepImageTableViewCell.identifier, for: indexPath) as! StepImageTableViewCell
             cell.selectionStyle = .none
             if step.imageVector != nil {
-                cell.stepImage.image = step.imageVector
+                cell.stepImage.image = step.imageColor
             }
             return cell
         } else if indexPath.row == 1 {

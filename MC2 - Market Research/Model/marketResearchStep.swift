@@ -15,6 +15,6 @@ struct researchStep {
     var resourceTools: String?
     var imageVector: UIImage?
     var progressImage : UIImage?
-    //var imageColor: UIImage?
+    var imageColor: UIImage?
 }
 
