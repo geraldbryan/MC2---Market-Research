@@ -32,12 +32,24 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
     var resObj = ""
     
     @IBOutlet weak var researchProjectTableView: UITableView!
-    @IBOutlet weak var stepsScrollView : UIScrollView!
+
+    @IBOutlet weak var finishButton: UIButton!
+    
+    @IBAction func finishButtonAction(_ sender: UIButton) {
+//        for i in researchProjectTableView{
+//
+//        }
+            
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        if researchProjectTableView.cellForRow(at: 0)?.backgroundColor == UIColor(red: 206/255, green: 229/255, blue: 214/255, alpha: 1){
+//
+//        }
+        finishButton.tintColor = UIColor(named: "colorTesting")?.withAlphaComponent(0.2)
+        finishButton.isEnabled = false
         self.navigationItem.largeTitleDisplayMode = .never
         self.title = "Research Project"
 
@@ -49,6 +61,7 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         researchProjectTableView.delegate = self
 
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -67,12 +80,15 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         let model = researchPage[indexPath.row-1]
         cell.researchStepName.text = model.stepName
         cell.researchStepImage.image = model.imageVector
+        cell.researchProgress.image = UIImage(named: "notStarted.png")
         //cell.researchProgress.image = UIImage.
         if model.stepName == "SWOT Analysis"{
             cell.researchProjectView.backgroundColor = UIColor(red: 206/255, green: 229/255, blue: 214/255, alpha: 1)
+            cell.researchProgress.image = UIImage(named: "done.png")
         }
         else if model.stepName == "Target Market Analysis"{
             cell.researchProjectView.backgroundColor = UIColor(red: 248/255, green: 220/255, blue: 200/255, alpha: 1)
+            cell.researchProgress.image = UIImage(named: "onProgress.png")
         }
         return cell
     }
@@ -91,6 +107,7 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
             performSegue(withIdentifier: "ProgressToStepDetail", sender: self)
         }
     }
+    
     
     
     //segue prepare

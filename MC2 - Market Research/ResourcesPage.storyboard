@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="11r-Li-OXC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -37,6 +37,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="38" y="36"/>
+        </scene>
+        <!--User Persona Page-->
+        <scene sceneID="W0r-0O-XEd">
+            <objects>
+                <viewController id="11r-Li-OXC" customClass="UserPersonaPage" customModule="MC2___Market_Research" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Ej-2v-lP3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ymg-UY-Aiz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lad-B3-lBp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ymg-UY-Aiz" firstAttribute="top" secondItem="lad-B3-lBp" secondAttribute="top" id="2WR-Xc-3D8"/>
+                            <constraint firstItem="Ymg-UY-Aiz" firstAttribute="leading" secondItem="lad-B3-lBp" secondAttribute="leading" id="Xdb-4z-DoT"/>
+                            <constraint firstItem="lad-B3-lBp" firstAttribute="bottom" secondItem="Ymg-UY-Aiz" secondAttribute="bottom" id="bJk-nF-qit"/>
+                            <constraint firstItem="lad-B3-lBp" firstAttribute="trailing" secondItem="Ymg-UY-Aiz" secondAttribute="trailing" id="rC1-wL-TPl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userPersonaTable" destination="Ymg-UY-Aiz" id="wKY-P3-Jo2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLz-Sc-88c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="719"/>
         </scene>
     </scenes>
     <resources>
