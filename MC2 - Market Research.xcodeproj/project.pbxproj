@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		09039A50285B263B00156FF3 /* nameObjectiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09039A4E285B263B00156FF3 /* nameObjectiveCell.swift */; };
 		09039A51285B263B00156FF3 /* nameObjectiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09039A4F285B263B00156FF3 /* nameObjectiveCell.xib */; };
+		0941B78628622E2D0007775E /* UserPersonaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941B78528622E2D0007775E /* UserPersonaPage.swift */; };
 		09A8B3B6285737E200BB99CA /* ResearchProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */; };
 		09A8B3B7285737E200BB99CA /* ResearchProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A8B3B5285737E200BB99CA /* ResearchProjectCell.xib */; };
 		09A8B3B92857415900BB99CA /* ResearchProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A8B3B82857415900BB99CA /* ResearchProgressController.swift */; };
@@ -76,6 +77,7 @@
 /* Begin PBXFileReference section */
 		09039A4E285B263B00156FF3 /* nameObjectiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameObjectiveCell.swift; sourceTree = "<group>"; };
 		09039A4F285B263B00156FF3 /* nameObjectiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = nameObjectiveCell.xib; sourceTree = "<group>"; };
+		0941B78528622E2D0007775E /* UserPersonaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPersonaPage.swift; sourceTree = "<group>"; };
 		09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchProjectCell.swift; sourceTree = "<group>"; };
 		09A8B3B5285737E200BB99CA /* ResearchProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResearchProjectCell.xib; sourceTree = "<group>"; };
 		09A8B3B82857415900BB99CA /* ResearchProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchProgressController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				26EC2363285F6DD9000C333B /* ResourceOneParagraphTableViewCell.xib */,
 				26EC2368285F6FDC000C333B /* ResourcesPage.storyboard */,
 				9002E7D928621E43008A1C27 /* demographicViewController.swift */,
+				0941B78528622E2D0007775E /* UserPersonaPage.swift */,
 			);
 			path = "MC2 - Market Research";
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				26EC2357285F5701000C333B /* StepResultTableViewCell.swift in Sources */,
 				90CCD5592854E3F6008D4F9A /* Research+CoreDataClass.swift in Sources */,
 				90CCD568285A305A008D4F9A /* onGoingResearchControllerViewController.swift in Sources */,
+				0941B78628622E2D0007775E /* UserPersonaPage.swift in Sources */,
 				90A2DE8E284E533D00B8F876 /* AppDelegate.swift in Sources */,
 				90CCD5652858E51C008D4F9A /* previousTableViewCell.swift in Sources */,
 				90CCD55A2854E3F6008D4F9A /* Research+CoreDataProperties.swift in Sources */,
