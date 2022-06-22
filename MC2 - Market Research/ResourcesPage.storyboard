@@ -17,26 +17,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MeZ-0o-u3s">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="778"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVs-gt-ecp">
+                                <rect key="frame" x="20" y="840" width="374" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MeZ-0o-u3s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9u9-4a-45K"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MeZ-0o-u3s" secondAttribute="bottom" id="oQM-cp-bMc"/>
+                            <constraint firstItem="MeZ-0o-u3s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="9u9-4a-45K"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MeZ-0o-u3s" secondAttribute="bottom" constant="30" id="G5Q-i6-uZL"/>
+                            <constraint firstItem="uVs-gt-ecp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="THM-MU-8Us"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uVs-gt-ecp" secondAttribute="trailing" constant="20" id="cfC-Ws-dN3"/>
+                            <constraint firstItem="uVs-gt-ecp" firstAttribute="top" secondItem="MeZ-0o-u3s" secondAttribute="bottom" constant="8" symbolic="YES" id="ndy-L3-0qq"/>
                             <constraint firstItem="MeZ-0o-u3s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="th1-dj-5pP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MeZ-0o-u3s" secondAttribute="trailing" id="vKy-9L-Fwf"/>
+                            <constraint firstAttribute="bottom" secondItem="uVs-gt-ecp" secondAttribute="bottom" constant="30" id="xnA-yG-4lc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="resourceTable" destination="MeZ-0o-u3s" id="XYA-V2-6De"/>
+                        <outlet property="resourcesCit" destination="uVs-gt-ecp" id="9C8-3S-h0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="36"/>
+            <point key="canvasLocation" x="183" y="35"/>
         </scene>
         <!--Demographic View Controller-->
         <scene sceneID="AmB-Xh-EQJ">
@@ -88,26 +99,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ymg-UY-Aiz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="778"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1S-3B-ecj">
+                                <rect key="frame" x="20" y="840" width="374" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lad-B3-lBp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ymg-UY-Aiz" firstAttribute="top" secondItem="lad-B3-lBp" secondAttribute="top" id="2WR-Xc-3D8"/>
+                            <constraint firstItem="Ymg-UY-Aiz" firstAttribute="top" secondItem="lad-B3-lBp" secondAttribute="top" constant="10" id="2WR-Xc-3D8"/>
+                            <constraint firstAttribute="bottom" secondItem="q1S-3B-ecj" secondAttribute="bottom" constant="30" id="AmF-Bh-iOD"/>
                             <constraint firstItem="Ymg-UY-Aiz" firstAttribute="leading" secondItem="lad-B3-lBp" secondAttribute="leading" id="Xdb-4z-DoT"/>
-                            <constraint firstItem="lad-B3-lBp" firstAttribute="bottom" secondItem="Ymg-UY-Aiz" secondAttribute="bottom" id="bJk-nF-qit"/>
+                            <constraint firstItem="lad-B3-lBp" firstAttribute="bottom" secondItem="Ymg-UY-Aiz" secondAttribute="bottom" constant="30" id="bJk-nF-qit"/>
+                            <constraint firstItem="lad-B3-lBp" firstAttribute="trailing" secondItem="q1S-3B-ecj" secondAttribute="trailing" constant="20" id="gZd-tC-N15"/>
+                            <constraint firstItem="q1S-3B-ecj" firstAttribute="leading" secondItem="lad-B3-lBp" secondAttribute="leading" constant="20" id="hqd-lJ-MBH"/>
+                            <constraint firstItem="q1S-3B-ecj" firstAttribute="top" secondItem="Ymg-UY-Aiz" secondAttribute="bottom" constant="8" symbolic="YES" id="kZi-kd-MCO"/>
                             <constraint firstItem="lad-B3-lBp" firstAttribute="trailing" secondItem="Ymg-UY-Aiz" secondAttribute="trailing" id="rC1-wL-TPl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="resourcesCit" destination="q1S-3B-ecj" id="0X4-SR-3mU"/>
                         <outlet property="userPersonaTable" destination="Ymg-UY-Aiz" id="wKY-P3-Jo2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLz-Sc-88c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="719"/>
+            <point key="canvasLocation" x="183" y="714"/>
         </scene>
     </scenes>
     <resources>

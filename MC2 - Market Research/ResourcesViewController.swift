@@ -10,10 +10,15 @@ import UIKit
 class ResourcesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var resourceTable: UITableView!
+    @IBOutlet weak var resourcesCit: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.title = "Resource Page"
 
+        resourcesCit.text = "Source: https://www.investopedia.com/terms/s/swot.asp"
         
         resourceTable.register(ResourceHeadingTableViewCell.nib(), forCellReuseIdentifier: ResourceHeadingTableViewCell.identifier)
         resourceTable.register(ResourceOneParagraphTableViewCell.nib(), forCellReuseIdentifier: ResourceOneParagraphTableViewCell.identifier)
@@ -61,6 +66,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.resourceTitleLabel.text = "SWOT Analysis"
         cell.resourceImageLabel.text = "Photo by: unsplash"
         cell.headingParagraph.text = "SWOT analysis is a technique for assessing the performance, competition, risk, and potential of a business, as well as part of a business such as a product line or division, an industry, or other entity. Using internal and external data, the technique can guide businesses toward strategies more likely to be successful, and away from those in which they have been, or are likely to be, less successful. Independent SWOT analysis, investors, or competitors can also guide them on whether a company, product line, or industry might be strong or weak and why."
+        cell.resourceHeadingImage.image = UIImage(named: "swot_analysis.png")
         return cell
     }
     
