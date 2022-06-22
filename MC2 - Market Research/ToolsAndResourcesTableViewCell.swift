@@ -57,7 +57,7 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ToolsAndResourcesCollectionViewCell.identifier, for: indexPath) as! ToolsAndResourcesCollectionViewCell
 
         let toolName = models.toolLists?[indexPath.row] ?? ""
-        cell.configure(image: models.imageVector!, name: toolName)
+        cell.configure(image: models.imageColor ?? UIImage(), name: toolName)
         return cell
     }
     

@@ -29,7 +29,7 @@ class ToolsAndResourcesCollectionViewCell: UICollectionViewCell {
 
     public func configure(image: UIImage, name: String){
 //        toolImageView.image = image
-        toolImageView.image = UIImage(named: "target")
+        toolImageView.image = image
         toolLabel.text = name
     }
 }

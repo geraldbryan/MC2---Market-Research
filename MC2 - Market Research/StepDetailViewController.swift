@@ -99,7 +99,7 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
 extension StepDetailViewController: TriggerCollectionViewDelegate{
     func getCellName(_ toolname: String) {
         let index = step.toolLists?.firstIndex(of: toolname) ?? 0
-        let referenceId = step.toolSegueId?[index] ?? ""
+        let referenceId = step.toolSegueId?[index] ?? "detailToSwotTool"
         performSegue(withIdentifier: referenceId, sender: self)
     }
 }
@@ -120,4 +120,5 @@ extension StepDetailViewController: StepResultTextViewDelegate{
 //            finishButton.isEnabled = true
 //        }
 //    }
+    
 }
