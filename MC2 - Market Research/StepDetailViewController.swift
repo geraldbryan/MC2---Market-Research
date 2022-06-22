@@ -17,6 +17,7 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         self.title = step.stepName
+        finishButton.isEnabled = false
         
         //register table cells
         table.register(StepImageTableViewCell.nib(), forCellReuseIdentifier: StepImageTableViewCell.identifier)
@@ -68,6 +69,7 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: StepResultTableViewCell.identifier, for: indexPath) as! StepResultTableViewCell
+        cell.delegateStepResult = self
         cell.selectionStyle = .none
         cell.resultTextView.text = "Write your research results here..."
         return cell
@@ -98,4 +100,22 @@ extension StepDetailViewController: TriggerCollectionViewDelegate{
     func getCellRow(_ cellIndex: Int) {
         performSegue(withIdentifier: "detailToResources", sender: self)
     }
+}
+extension StepDetailViewController: StepResultTextViewDelegate{
+    func textViewState(text: String) {
+        if text.isEmpty{
+            finishButton.isEnabled = false
+        } else {
+            finishButton.isEnabled = true
+        }
+    }
+    
+//    func textViewState(isEmpty: Bool) {
+//        if isEmpty {
+//            finishButton.isEnabled = false
+//
+//        } else {
+//            finishButton.isEnabled = true
+//        }
+//    }
 }
