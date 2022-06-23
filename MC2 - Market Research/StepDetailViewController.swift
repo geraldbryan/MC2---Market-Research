@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class StepDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -14,10 +15,9 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var finishButton: UIButton!
+    
     var step = researchStep()
-    
-    var researchId = ""
-    
+    var resId = ""
     var stepResult: String?
 
     override func viewDidLoad() {
@@ -39,22 +39,28 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
+    
     //IBActions
     @IBAction func goBackToProgress(_ sender: Any) {
-        let newRes = ResearchResult(context: context)
-        
-        newRes.id = researchId
-        newRes.type = step.stepName
-        newRes.result = stepResult
-        
-        do{
-            try context.save()
-            getAllItems()
-            navigationController?.popViewController(animated: true)
-        } catch{
+        if let index = result.firstIndex(where: {$0.id == resId && $0.type == step.stepName}) {
+            if let newResult = stepResult{
+                updateItem(item: result[index], newResult: newResult)
+                print(result[index])
+            }
+        } else {
+            let newRes = ResearchResult(context: context)
             
+            newRes.id = resId
+            newRes.type = step.stepName
+            newRes.result = stepResult
+            
+            do{
+                try context.save()
+                getAllItems()
+            } catch{
+            }
         }
-        
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -67,31 +73,42 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
                 cell.stepImage.image = step.imageColor
             }
             return cell
-        } else if indexPath.row == 1 {
+        }
+        else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: StepDescriptionTableViewCell.identifier, for: indexPath) as! StepDescriptionTableViewCell
             cell.selectionStyle = .none
             if step.stepWhat != nil {
                 cell.configure(title: (step.stepName ?? ""), description: (step.stepWhat ?? ""))
             }
             return cell
-        } else if indexPath.row == 2 {
+        }
+        else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: StepDescriptionTableViewCell.identifier, for: indexPath) as! StepDescriptionTableViewCell
             cell.selectionStyle = .none
             if step.stepWhy != nil {
                 cell.configure(title: "Why Important?", description: (step.stepWhy ?? ""))
             }
             return cell
-        } else if indexPath.row == 3 {
+        }
+        else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ToolsAndResourcesTableViewCell.identifier, for: indexPath) as! ToolsAndResourcesTableViewCell
             cell.delegate = self
             cell.selectionStyle = .none
             cell.configure(with: step)
             return cell
         }
+        //result cell
         let cell = tableView.dequeueReusableCell(withIdentifier: StepResultTableViewCell.identifier, for: indexPath) as! StepResultTableViewCell
+        if let index = result.firstIndex(where: {$0.id == resId && $0.type == step.stepName}){
+            let model = result[index]
+            cell.resultTextView.text = model.result
+        } else {
+            cell.resultTextView.text = "Write your research results here..."
+        }
+
         cell.delegateStepResult = self
         cell.selectionStyle = .none
-        cell.resultTextView.text = "Write your research results here..."
+
         return cell
     }
     
@@ -113,11 +130,21 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         print(indexPath.row)
     }
         
+    
+    //Core Data Functions
     func getAllItems(){
         do{
             result = try context.fetch(ResearchResult.fetchRequest())
-            
         } catch{
+            
+        }
+    }
+    
+    func updateItem(item: ResearchResult, newResult: String){
+        item.result = newResult
+        do {
+            try context.save()
+        } catch  {
             
         }
     }
@@ -132,6 +159,7 @@ extension StepDetailViewController: TriggerCollectionViewDelegate{
         performSegue(withIdentifier: referenceId, sender: self)
     }
 }
+
 extension StepDetailViewController: StepResultTextViewDelegate{
     func textViewState(text: String) {
         if text.isEmpty{
@@ -139,17 +167,6 @@ extension StepDetailViewController: StepResultTextViewDelegate{
         } else {
             finishButton.isEnabled = true
         }
-        
         stepResult = text
     }
-    
-//    func textViewState(isEmpty: Bool) {
-//        if isEmpty {
-//            finishButton.isEnabled = false
-//
-//        } else {
-//            finishButton.isEnabled = true
-//        }
-//    }
-    
 }
