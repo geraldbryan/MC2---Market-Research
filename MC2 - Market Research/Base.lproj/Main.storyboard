@@ -446,22 +446,44 @@
                     <connections>
                         <outlet property="finishButton" destination="JNz-ad-SGv" id="hpf-iy-PwM"/>
                         <outlet property="table" destination="Kd3-G9-xFR" id="cov-AO-O1I"/>
-                        <segue destination="7YA-l0-oeu" kind="show" identifier="detailToResources" id="Opf-XA-zdi"/>
+                        <segue destination="7YA-l0-oeu" kind="show" identifier="detailToSwotTool" id="Opf-XA-zdi"/>
+                        <segue destination="i8h-s3-9Hz" kind="show" identifier="detailToUserPersonaTool" id="jab-5i-Rb8"/>
+                        <segue destination="7lB-1p-Ad0" kind="show" identifier="detailToDemographicTool" id="kpT-q2-Bpq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Np-Bm-MuE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-866.15384615384608" y="1563.9810426540284"/>
         </scene>
-        <!--ResourcesPage-->
+        <!--SwotVC-->
         <scene sceneID="dRQ-oN-C0b">
             <objects>
-                <viewControllerPlaceholder storyboardName="ResourcesPage" id="7YA-l0-oeu" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ResourcesPage" referencedIdentifier="SwotVC" id="7YA-l0-oeu" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Test" id="ZYl-Nt-xDB"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flb-Hk-BUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="1564"/>
+            <point key="canvasLocation" x="-118" y="1423"/>
+        </scene>
+        <!--UserPersonaVC-->
+        <scene sceneID="KUz-NI-yBU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ResourcesPage" referencedIdentifier="UserPersonaVC" id="i8h-s3-9Hz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fvO-1Y-nMf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6x-gL-G1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118" y="1577"/>
+        </scene>
+        <!--DemographicVC-->
+        <scene sceneID="CEr-Kj-VAU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ResourcesPage" referencedIdentifier="DemographicVC" id="7lB-1p-Ad0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WeU-uY-SoM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIu-9Y-fVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-93" y="1715"/>
         </scene>
         <!--On Going Research Controller View Controller-->
         <scene sceneID="ZD8-Z9-8GQ">

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TriggerCollectionViewDelegate{
-    func getCellRow(_ cellIndex: Int)
+    func getCellName(_ toolname: String)
 }
 
 class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -50,13 +50,14 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
     
     //Collection view functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return models.toolLists?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ToolsAndResourcesCollectionViewCell.identifier, for: indexPath) as! ToolsAndResourcesCollectionViewCell
 
-        cell.configure(image: models.imageVector!, name: models.stepName!)
+        let toolName = models.toolLists?[indexPath.row] ?? ""
+        cell.configure(image: models.imageColor ?? UIImage(), name: toolName)
         return cell
     }
     
@@ -65,8 +66,8 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-        delegate?.getCellRow(indexPath.row)
+        let text = models.toolLists?[indexPath.row] ?? ""
+        delegate?.getCellName(text)
         print(delegate as Any)
     }
     

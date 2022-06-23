@@ -16,5 +16,7 @@ struct researchStep {
     var imageVector: UIImage?
     var progressImage : UIImage?
     var imageColor: UIImage?
+    var toolLists: [String]?
+    var toolSegueId: [String]?
 }
 
