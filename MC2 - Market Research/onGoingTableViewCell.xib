@@ -44,6 +44,13 @@
                                 <color key="progressTintColor" red="0.80392158030000005" green="0.89803922179999995" blue="0.8392156959" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFu-Hs-Amx">
+                                <rect key="frame" x="192" y="65" width="49" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.47843140360000003" green="0.5176470876" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
@@ -59,6 +66,7 @@
             <connections>
                 <outlet property="innerView" destination="UlZ-Nk-CL9" id="0Za-we-RlC"/>
                 <outlet property="progress" destination="Y75-jq-2l1" id="Fps-OC-02C"/>
+                <outlet property="progressText" destination="eFu-Hs-Amx" id="xbk-N9-DX5"/>
                 <outlet property="researchName" destination="PvI-bc-gZd" id="cWC-Bh-LcH"/>
                 <outlet property="researchObjective" destination="nbo-en-miP" id="HFY-5t-phH"/>
             </connections>

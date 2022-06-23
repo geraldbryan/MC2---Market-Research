@@ -13,6 +13,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var researchObjective: UILabel!
     @IBOutlet var innerView: UIView!
     @IBOutlet var progress: UIProgressView!
+    @IBOutlet var progressText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -18,6 +18,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     private var models = [Research]()
     private var filtered = [Research]()
     private var onGoing = [Research]()
+    private var result = [ResearchResult]()
+    private var filterResult = [ResearchResult]()
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var prevTableView: UITableView!
@@ -114,6 +116,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func getAllItems(){
         do{
             models = try context.fetch(Research.fetchRequest())
+            result = try context.fetch(ResearchResult.fetchRequest())
             
             self.filtered = models.filter{ $0.name == "Ali"}
             self.onGoing = models.filter{ $0.name != "Ali"}
@@ -188,9 +191,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let strDeadline = formatter.string(from: model.deadline ?? Date())
             
-            cell.researchName?.text = model.id
+            cell.researchName?.text = model.name
             cell.researchObjective?.text = "Deadline: \(strDeadline)"
             
+            filterResult = result.filter{ $0.id == model.id}
+            cell.progress?.progress = Float(filterResult.count) / Float(5)
+            
+            let progStr = String(round((Float(filterResult.count) / Float(5)) * Float(100)))
+            cell.progressText?.text = "\(progStr)%"
+            print("\(progStr)%")
             return cell
             
         } else if tableView == prevTableView,

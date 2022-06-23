@@ -45,6 +45,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.73725497719999999" green="0.75686275960000005" blue="0.8156862855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-b9-dU3">
+                                <rect key="frame" x="184" y="65" width="49" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.47843140360000003" green="0.5176470876" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
@@ -55,6 +62,7 @@
             <connections>
                 <outlet property="innerView" destination="1P3-L6-rOY" id="h6E-KX-D6M"/>
                 <outlet property="progress" destination="vWP-uD-aFk" id="3kO-2g-azD"/>
+                <outlet property="progressText" destination="sK1-b9-dU3" id="VEv-Sl-9g9"/>
                 <outlet property="researchName" destination="Rpt-oW-06m" id="iN7-wQ-1aU"/>
                 <outlet property="researchObjective" destination="sqQ-vW-brN" id="WRK-Tc-jCg"/>
             </connections>
