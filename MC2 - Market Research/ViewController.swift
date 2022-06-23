@@ -65,7 +65,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Fetching core data
         getAllItems()
         
-        //deleteAllData("Research")
+//        deleteAllData("Research")
+//        deleteAllData("Dummy")
+//        deleteAllData("ResearchResult")
         
         // Do any additional setup after loading the view
         
@@ -184,9 +186,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let formatter = DateFormatter()
             formatter.dateFormat = "MMM d, yyyy"
             
-            let strDeadline = formatter.string(from: model.deadline!)
+            let strDeadline = formatter.string(from: model.deadline ?? Date())
             
-            cell.researchName?.text = model.name
+            cell.researchName?.text = model.id
             cell.researchObjective?.text = "Deadline: \(strDeadline)"
             
             return cell
@@ -256,6 +258,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 dest.resName = onGoing.reversed()[indexTwo].name ?? "New Research"
                 dest.resObj = onGoing.reversed()[indexTwo].objective ?? ""
+                dest.resId = onGoing.reversed()[indexTwo].id ?? ""
                 
             }
         } else {
@@ -263,6 +266,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 dest.resName = filtered.reversed()[indexThree].name ?? "New Research"
                 dest.resObj = filtered.reversed()[indexThree].objective ?? ""
+                dest.resId = filtered.reversed()[indexThree].id ?? ""
                 
             }
         }

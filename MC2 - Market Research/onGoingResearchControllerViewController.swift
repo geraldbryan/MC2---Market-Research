@@ -88,7 +88,7 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
             let alert = UIAlertController(title: "Delete Research", message: "Are you sure you want to delete this research?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
 
-                let deleteObject = self.onGoing[indexPath.row]
+                let deleteObject = self.onGoing.reversed()[indexPath.row]
                 self.context.delete(deleteObject)
 
                 do

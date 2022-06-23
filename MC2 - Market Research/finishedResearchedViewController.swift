@@ -72,7 +72,7 @@ class finishedResearchedViewController: UIViewController, UITableViewDataSource,
             let alert = UIAlertController(title: "Delete Research", message: "Are you sure you want to delete this research?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
 
-                let deleteObject = self.finished[indexPath.row]
+                let deleteObject = self.finished.reversed()[indexPath.row]
                 self.context.delete(deleteObject)
 
                 do
