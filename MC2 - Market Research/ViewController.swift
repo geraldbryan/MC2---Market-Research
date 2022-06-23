@@ -245,6 +245,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         if tableView == self.tableView{
             self.indexTwo = indexPath.row
+            
             performSegue(withIdentifier: "klikCell", sender: self)
         } else {
             self.indexThree = indexPath.row
