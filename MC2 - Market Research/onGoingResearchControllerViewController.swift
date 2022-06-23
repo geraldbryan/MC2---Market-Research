@@ -11,11 +11,17 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
     var indexTwo = 0
     private var models = [Research]()
     private var onGoing = [Research]()
+    private var result = [ResearchResult]()
+    private var filterResult = [ResearchResult]()
     
     @IBOutlet var onGoingTable: UITableView!
     
     // Core data configuration
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getAllItems()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +41,7 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
     func getAllItems(){
         do{
             models = try context.fetch(Research.fetchRequest())
+            result = try context.fetch(ResearchResult.fetchRequest())
             
             self.onGoing = models.filter{ $0.name != "Ali"}
             
@@ -59,6 +66,12 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
 
         cell.researchName?.text = model.name
         cell.researchObjective?.text = "Deadline: \(strDeadline)"
+        
+        filterResult = result.filter{ $0.id == model.id}
+        cell.progress?.progress = Float(filterResult.count) / Float(5)
+        
+        let progStr = String(round((Float(filterResult.count) / Float(5)) * Float(100)))
+        cell.progressText?.text = "\(progStr)%"
 
         return cell
     }
@@ -123,6 +136,7 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
                 
                 dest.resName = onGoing.reversed()[indexTwo].name ?? "New Research"
                 dest.resObj = onGoing.reversed()[indexTwo].objective ?? ""
+                dest.resId = onGoing.reversed()[indexTwo].id ?? ""
                 
             }
         }
