@@ -7,6 +7,8 @@
 
 import UIKit
 var researchPage = [researchStep]()
+var models = [ResearchResult]()
+private var filtered = [ResearchResult]()
 func initData() {
 
     // Append swot analysis into research page data
@@ -28,19 +30,28 @@ func initData() {
 
 class ResearchProgressController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate  {
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var resName = ""
     var resObj = ""
     var resId = ""
+    var resDeadline = Date()
     
     @IBOutlet weak var researchProjectTableView: UITableView!
 
     @IBOutlet weak var finishButton: UIButton!
     
+    @IBAction func editButton(_ sender: Any) {
+        print("sebelum")
+        performSegue(withIdentifier: "researchToEdit", sender: self)
+        print("sudah")
+    }
     @IBAction func finishButtonAction(_ sender: UIButton) {
-//        for i in researchProjectTableView{
-//
-//        }
+        performSegue(withIdentifier: "unwindToHome", sender: self)
             
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        getAllItems()
     }
     
     
@@ -49,7 +60,8 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
 //        if researchProjectTableView.cellForRow(at: 0)?.backgroundColor == UIColor(red: 206/255, green: 229/255, blue: 214/255, alpha: 1){
 //
 //        }
-        finishButton.tintColor = UIColor(named: "colorTesting")?.withAlphaComponent(0.2)
+        
+        finishButton.tintColor = UIColor(named: "colorTesting")
         finishButton.isEnabled = false
         self.navigationItem.largeTitleDisplayMode = .never
         self.title = "Research Project"
@@ -60,6 +72,11 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         researchProjectTableView.register(UINib(nibName: "nameObjectiveCell", bundle: nil), forCellReuseIdentifier: "nameObj_cell")
         researchProjectTableView.dataSource = self
         researchProjectTableView.delegate = self
+        getAllItems()
+        filtered = models.filter{$0.id == resId}
+        if filtered.count == 5{
+            finishButton.isEnabled = true
+        }
 
     }
     
@@ -79,20 +96,22 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         //researchProjectTableView.rowHeight = 169
         let cell = tableView.dequeueReusableCell(withIdentifier: "rp_cell", for: indexPath) as! ResearchProjectCell
         let model = researchPage[indexPath.row-1]
+        cell.researchProgress.contentMode = .left
         cell.researchStepName.text = model.stepName
         cell.researchStepImage.image = model.imageVector
         cell.researchProgress.image = UIImage(named: "notStarted.png")
-        //cell.researchProgress.image = UIImage.
-        if model.stepName == "SWOT Analysis"{
+        filtered = models.filter{$0.id == resId}
+        filtered = filtered.filter{$0.type == model.stepName}
+        print(filtered.count)
+        if filtered.count > 0{
             cell.researchProjectView.backgroundColor = UIColor(red: 206/255, green: 229/255, blue: 214/255, alpha: 1)
             cell.researchProgress.image = UIImage(named: "done.png")
-        }
-        else if model.stepName == "Target Market Analysis"{
-            cell.researchProjectView.backgroundColor = UIColor(red: 248/255, green: 220/255, blue: 200/255, alpha: 1)
-            cell.researchProgress.image = UIImage(named: "onProgress.png")
+            
         }
         return cell
     }
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var height : CGFloat
         if indexPath.row == 0 {
@@ -109,6 +128,14 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    func getAllItems(){
+        do{
+            models = try context.fetch(ResearchResult.fetchRequest())
+            
+        } catch{
+        }
+    }
+    
     
     
     //segue prepare
@@ -118,6 +145,13 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
                 let index = researchProjectTableView.indexPathForSelectedRow
                 newVC.step = researchPage[index!.row-1]
                 newVC.resId = resId
+            }
+        }
+        if segue.identifier == "researchToEdit"{
+            if let editRes = segue.destination as? NewResearch {
+                editRes.name = resName
+                editRes.objective = resObj
+                editRes.id = resId
             }
         }
     }

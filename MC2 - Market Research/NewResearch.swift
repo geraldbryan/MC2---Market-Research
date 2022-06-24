@@ -20,15 +20,20 @@ class NewResearch: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
 
-    let name: String = ""
-    let objective: String = ""
-    let deadline: Date = Date()
-    
+    var name: String = ""
+    var objective: String = ""
+    var deadline: Date = Date()
+    var id: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         getAllItems()
         resObj.borderStyle = .roundedRect
         resName.borderStyle = .roundedRect
+        if name != ""{
+            self.resName.text = name
+            self.resObj.text = objective
+            self.resDead.date = deadline
+        }
         // Do any additional setup after loading the view.
         
     }
