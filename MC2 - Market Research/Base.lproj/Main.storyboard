@@ -55,7 +55,7 @@
                                 <rect key="frame" x="0.0" y="738" width="390" height="72"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="om5-Qa-Kqd">
-                                        <rect key="frame" x="20" y="21" width="350" height="31"/>
+                                        <rect key="frame" x="20" y="21" width="350" height="40"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Finish the Research"/>
                                         <connections>
@@ -66,7 +66,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="om5-Qa-Kqd" secondAttribute="bottom" constant="20" id="En6-gT-Mf5"/>
+                                    <constraint firstAttribute="bottom" secondItem="om5-Qa-Kqd" secondAttribute="bottom" constant="11" id="En6-gT-Mf5"/>
                                     <constraint firstItem="om5-Qa-Kqd" firstAttribute="leading" secondItem="Hpf-Pz-QDj" secondAttribute="leading" constant="20" id="IZ3-Tk-1dh"/>
                                     <constraint firstAttribute="trailing" secondItem="om5-Qa-Kqd" secondAttribute="trailing" constant="20" id="P2c-9F-20B"/>
                                     <constraint firstAttribute="height" constant="72" id="V6M-3J-fuB"/>
@@ -94,17 +94,23 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Edit"/>
                             </button>
+                            <connections>
+                                <action selector="editButton:" destination="PNq-E0-k4w" id="atO-uh-bGw"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="finishButton" destination="om5-Qa-Kqd" id="oQE-SH-Ive"/>
                         <outlet property="researchProjectTableView" destination="oDz-7e-gDN" id="mJu-Cj-DUi"/>
                         <segue destination="vlb-1d-Jhm" kind="show" identifier="ProgressToStepDetail" id="zIs-wo-79d"/>
+                        <segue destination="amp-3l-zGB" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="OML-f2-5Ye"/>
+                        <segue destination="OOB-ZR-ff3" kind="presentation" identifier="researchToEdit" id="WAC-oU-yae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnH-VH-nV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="amp-3l-zGB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-866.15384615384608" y="815.40284360189571"/>
+            <point key="canvasLocation" x="-866" y="823"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -405,11 +411,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kd3-G9-xFR">
-                                <rect key="frame" x="0.0" y="88" width="390" height="664"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEs-hC-FiH">
-                                <rect key="frame" x="0.0" y="752" width="390" height="58"/>
+                                <rect key="frame" x="0.0" y="761" width="390" height="49"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNz-ad-SGv">
                                         <rect key="frame" x="20" y="18" width="350" height="31"/>
@@ -423,10 +429,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="JNz-ad-SGv" firstAttribute="top" secondItem="sEs-hC-FiH" secondAttribute="top" constant="18" id="15J-eT-3cG"/>
+                                    <constraint firstAttribute="bottom" secondItem="JNz-ad-SGv" secondAttribute="bottom" id="7BD-QN-q72"/>
                                     <constraint firstItem="JNz-ad-SGv" firstAttribute="leading" secondItem="sEs-hC-FiH" secondAttribute="leading" constant="20" id="IyU-2k-oqZ"/>
+                                    <constraint firstItem="JNz-ad-SGv" firstAttribute="top" secondItem="sEs-hC-FiH" secondAttribute="top" constant="18" id="UaX-cl-cOb"/>
                                     <constraint firstAttribute="trailing" secondItem="JNz-ad-SGv" secondAttribute="trailing" constant="20" id="blX-vc-7SS"/>
-                                    <constraint firstAttribute="bottom" secondItem="JNz-ad-SGv" secondAttribute="bottom" constant="9" id="wz4-At-K1S"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -453,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Np-Bm-MuE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-866.15384615384608" y="1563.9810426540284"/>
+            <point key="canvasLocation" x="-866" y="1577"/>
         </scene>
         <!--SwotVC-->
         <scene sceneID="dRQ-oN-C0b">
@@ -551,7 +557,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zaY-e3-Iyg"/>
+        <segue reference="WAC-oU-yae"/>
         <segue reference="bZ3-Je-dBS"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -35,15 +35,19 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
     var resName = ""
     var resObj = ""
     var resId = ""
+    var resDeadline = Date()
     
     @IBOutlet weak var researchProjectTableView: UITableView!
 
     @IBOutlet weak var finishButton: UIButton!
     
+    @IBAction func editButton(_ sender: Any) {
+        print("sebelum")
+        performSegue(withIdentifier: "researchToEdit", sender: self)
+        print("sudah")
+    }
     @IBAction func finishButtonAction(_ sender: UIButton) {
-//        for i in researchProjectTableView{
-//
-//        }
+        performSegue(withIdentifier: "unwindToHome", sender: self)
             
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -141,6 +145,13 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
                 let index = researchProjectTableView.indexPathForSelectedRow
                 newVC.step = researchPage[index!.row-1]
                 newVC.resId = resId
+            }
+        }
+        if segue.identifier == "researchToEdit"{
+            if let editRes = segue.destination as? NewResearch {
+                editRes.name = resName
+                editRes.objective = resObj
+                editRes.id = resId
             }
         }
     }

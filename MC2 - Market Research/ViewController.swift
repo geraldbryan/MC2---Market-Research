@@ -269,7 +269,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 dest.resName = onGoing.reversed()[indexTwo].name ?? "New Research"
                 dest.resObj = onGoing.reversed()[indexTwo].objective ?? ""
                 dest.resId = onGoing.reversed()[indexTwo].id ?? ""
-                
+                dest.resDeadline = onGoing.reversed()[indexTwo].deadline ?? Date()
             }
         } else {
             if let dest = segue.destination as? ResearchProgressController{
@@ -277,6 +277,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 dest.resName = filtered.reversed()[indexThree].name ?? "New Research"
                 dest.resObj = filtered.reversed()[indexThree].objective ?? ""
                 dest.resId = filtered.reversed()[indexThree].id ?? ""
+                dest.resDeadline = filtered.reversed()[indexThree].deadline ?? Date()
                 
             }
         }
@@ -296,5 +297,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func newResearch(){
         performSegue(withIdentifier: "emptyNew", sender: self)
     }
+    
+    @IBAction func unwindToHome(_ seg: UIStoryboardSegue) {
+            getAllItems()
+        }
     
 }
