@@ -455,6 +455,7 @@
                         <segue destination="7YA-l0-oeu" kind="show" identifier="detailToSwotTool" id="Opf-XA-zdi"/>
                         <segue destination="i8h-s3-9Hz" kind="show" identifier="detailToUserPersonaTool" id="jab-5i-Rb8"/>
                         <segue destination="7lB-1p-Ad0" kind="show" identifier="detailToDemographicTool" id="kpT-q2-Bpq"/>
+                        <segue destination="d38-fD-C0N" kind="show" identifier="detailToComingSoon" id="eog-ZE-jdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Np-Bm-MuE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -490,6 +491,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIu-9Y-fVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-93" y="1715"/>
+        </scene>
+        <!--ComingSoonVC-->
+        <scene sceneID="PaC-xc-EaV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ResourcesPage" referencedIdentifier="ComingSoonVC" id="d38-fD-C0N" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wns-x1-P5r"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vnm-ml-fPs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-128" y="1796"/>
         </scene>
         <!--On Going Research Controller View Controller-->
         <scene sceneID="ZD8-Z9-8GQ">

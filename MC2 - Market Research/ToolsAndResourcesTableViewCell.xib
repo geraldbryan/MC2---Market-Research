@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LCi-aI-DHj">
-                        <rect key="frame" x="10" y="56" width="370" height="94"/>
+                        <rect key="frame" x="20" y="56" width="350" height="94"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="10" id="CWR-PC-CMP">
                             <size key="itemSize" width="128" height="128"/>
@@ -46,13 +46,13 @@
                 <constraints>
                     <constraint firstItem="OsU-JD-qaY" firstAttribute="top" secondItem="QFJ-N6-nkm" secondAttribute="bottom" constant="8" symbolic="YES" id="1wA-LX-c3X"/>
                     <constraint firstAttribute="trailing" secondItem="OsU-JD-qaY" secondAttribute="trailing" constant="20" symbolic="YES" id="CNr-DW-Ye1"/>
+                    <constraint firstAttribute="trailing" secondItem="LCi-aI-DHj" secondAttribute="trailing" constant="20" id="E5E-6u-7KX"/>
                     <constraint firstItem="LCi-aI-DHj" firstAttribute="top" secondItem="OsU-JD-qaY" secondAttribute="bottom" constant="5" id="QgJ-Xe-jCV"/>
                     <constraint firstAttribute="bottom" secondItem="LCi-aI-DHj" secondAttribute="bottom" constant="5" id="RCG-4U-hKt"/>
-                    <constraint firstAttribute="trailing" secondItem="LCi-aI-DHj" secondAttribute="trailing" constant="10" id="T77-Kk-BqD"/>
                     <constraint firstItem="QFJ-N6-nkm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="WgU-Rx-eMK"/>
                     <constraint firstItem="QFJ-N6-nkm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="YCJ-v5-6oH"/>
                     <constraint firstAttribute="trailing" secondItem="QFJ-N6-nkm" secondAttribute="trailing" constant="20" symbolic="YES" id="hnc-1l-WP1"/>
-                    <constraint firstItem="LCi-aI-DHj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rZs-pX-ARE"/>
+                    <constraint firstItem="LCi-aI-DHj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="s1H-2V-Mk0"/>
                     <constraint firstItem="OsU-JD-qaY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="xSA-OH-kY8"/>
                 </constraints>
             </tableViewCellContentView>

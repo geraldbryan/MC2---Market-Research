@@ -18,5 +18,6 @@ struct researchStep {
     var imageColor: UIImage?
     var toolLists: [String]?
     var toolSegueId: [String]?
+    var toolIcon: [String]?
 }
 
