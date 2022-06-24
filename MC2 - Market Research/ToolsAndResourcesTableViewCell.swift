@@ -57,7 +57,10 @@ class ToolsAndResourcesTableViewCell: UITableViewCell, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ToolsAndResourcesCollectionViewCell.identifier, for: indexPath) as! ToolsAndResourcesCollectionViewCell
 
         let toolName = models.toolLists?[indexPath.row] ?? ""
-        cell.configure(image: models.imageColor ?? UIImage(), name: toolName)
+        let toolIcon = models.toolIcon?[indexPath.row] ?? "xmark.octagon"
+//        cell.configure(image: models.imageColor ?? UIImage(), name: toolName)
+        cell.configure(image: UIImage(systemName: toolIcon) ?? UIImage(), name: toolName)
+//        UIImage(systemName: <#T##String#>)
         return cell
     }
     
