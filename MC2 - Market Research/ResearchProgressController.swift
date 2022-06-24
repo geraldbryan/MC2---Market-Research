@@ -9,6 +9,8 @@ import UIKit
 var researchPage = [researchStep]()
 var models = [ResearchResult]()
 private var filtered = [ResearchResult]()
+private var countFin = [ResearchResult]()
+private var finished = [Research]()
 func initData() {
 
     // Append swot analysis into research page data
@@ -42,27 +44,44 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var finishButton: UIButton!
     
     @IBAction func editButton(_ sender: Any) {
-        print("sebelum")
         performSegue(withIdentifier: "researchToEdit", sender: self)
-        print("sudah")
     }
+    
     @IBAction func finishButtonAction(_ sender: UIButton) {
+        let index = finished.firstIndex(where: {$0.id == resId})
+        updateItem(item: finished[index ?? 0], fin: "finish")
         performSegue(withIdentifier: "unwindToHome", sender: self)
-            
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         getAllItems()
+        
+        countFin = models.filter{ $0.id == resId}
+        
+        if countFin.count == 5{
+            finishButton.isEnabled = true
+        } else {
+            finishButton.isEnabled = false
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getAllItems()
+        if filtered.count == 5{
+            finishButton.isEnabled = true
+        } else {
+            finishButton.isEnabled = false
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if researchProjectTableView.cellForRow(at: 0)?.backgroundColor == UIColor(red: 206/255, green: 229/255, blue: 214/255, alpha: 1){
-//
-//        }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title:"Edit", style: .plain, target: self, action: #selector(editButton))
         
         finishButton.tintColor = UIColor(named: "colorTesting")
-        finishButton.isEnabled = false
+        
         self.navigationItem.largeTitleDisplayMode = .never
         self.title = "Research Project"
 
@@ -73,9 +92,12 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         researchProjectTableView.dataSource = self
         researchProjectTableView.delegate = self
         getAllItems()
+        
         filtered = models.filter{$0.id == resId}
         if filtered.count == 5{
             finishButton.isEnabled = true
+        } else {
+            finishButton.isEnabled = false
         }
 
     }
@@ -99,14 +121,21 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         cell.researchProgress.contentMode = .left
         cell.researchStepName.text = model.stepName
         cell.researchStepImage.image = model.imageVector
-        cell.researchProgress.image = UIImage(named: "notStarted.png")
+        
+        
         filtered = models.filter{$0.id == resId}
         filtered = filtered.filter{$0.type == model.stepName}
-        print(filtered.count)
+        
         if filtered.count > 0{
             cell.researchProjectView.backgroundColor = UIColor(red: 206/255, green: 229/255, blue: 214/255, alpha: 1)
             cell.researchProgress.image = UIImage(named: "done.png")
-            
+        } else {
+            cell.researchProjectView.backgroundColor = UIColor(red: 194/255, green: 210/255, blue: 236/255, alpha: 1)
+            cell.researchProgress.image = UIImage(named: "notStarted.png")
+        }
+        
+        if filtered.count == 5{
+            finishButton.isEnabled = true
         }
         return cell
     }
@@ -131,10 +160,27 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
     func getAllItems(){
         do{
             models = try context.fetch(ResearchResult.fetchRequest())
+            finished = try context.fetch(Research.fetchRequest())
             
+            DispatchQueue.main.async {
+                self.researchProjectTableView.reloadData()
+            }
         } catch{
         }
     }
+    
+    func updateItem(item:Research, fin:String){
+        
+        item.finished = fin
+        
+        do{
+            try context.save()
+        } catch{
+            
+        }
+        
+    }
+
     
     
     

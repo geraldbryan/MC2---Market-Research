@@ -20,6 +20,7 @@ extension Research {
     @NSManaged public var name: String?
     @NSManaged public var objective: String?
     @NSManaged public var id: String?
+    @NSManaged public var finished: String?
 
 }
 

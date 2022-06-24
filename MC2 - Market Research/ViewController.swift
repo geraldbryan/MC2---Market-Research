@@ -118,8 +118,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             models = try context.fetch(Research.fetchRequest())
             result = try context.fetch(ResearchResult.fetchRequest())
             
-            self.filtered = models.filter{ $0.name == "Ali"}
-            self.onGoing = models.filter{ $0.name != "Ali"}
+            self.filtered = models.filter{ $0.finished == "finish"}
+            self.onGoing = models.filter{ $0.finished != "finish"}
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -162,21 +162,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } catch{
             
         }
-    }
-    
-    
-    func updateItem(item:Research, newName:String, newObjective:String, newDeadline:Date){
-        
-        item.name = newName
-        item.objective = newObjective
-        item.deadline = newDeadline
-        
-        do{
-            try context.save()
-        } catch{
-            
-        }
-        
     }
     
     // Table view funtion

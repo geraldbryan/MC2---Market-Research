@@ -35,7 +35,7 @@ class finishedResearchedViewController: UIViewController, UITableViewDataSource,
         do{
             models = try context.fetch(Research.fetchRequest())
             
-            self.finished = models.filter{ $0.name == "Ali"}
+            self.finished = models.filter{ $0.finished == "finish"}
             
             DispatchQueue.main.async {
                 self.finishedTable.reloadData()

@@ -39,6 +39,7 @@ class NewResearch: UIViewController {
     }
     
     @IBAction func tapSaveButton(){
+        if name == ""{
         let newItem = Research(context: context)
         let idCount = Dummy(context: context)
         
@@ -48,7 +49,11 @@ class NewResearch: UIViewController {
         newItem.deadline = resDead.date
         
         let identifier = countId.count
-        newItem.id = String(identifier)
+            newItem.id = String(identifier)
+        } else{
+            let index = models.firstIndex(where: {$0.name == name})
+            updateItem(item: models[index ?? 0], newName: resName.text ?? "New Research", newObjective: resObj.text ?? "No Objective", newDeadline: resDead.date)
+        }
         
         do{
             try context.save()
@@ -67,6 +72,20 @@ class NewResearch: UIViewController {
         } catch{
             
         }
+    }
+    
+    func updateItem(item:Research, newName:String, newObjective:String, newDeadline:Date){
+        
+        item.name = newName
+        item.objective = newObjective
+        item.deadline = newDeadline
+        
+        do{
+            try context.save()
+        } catch{
+            
+        }
+        
     }
     /*
     // MARK: - Navigation

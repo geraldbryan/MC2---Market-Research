@@ -43,7 +43,7 @@ class onGoingResearchControllerViewController: UIViewController, UITableViewData
             models = try context.fetch(Research.fetchRequest())
             result = try context.fetch(ResearchResult.fetchRequest())
             
-            self.onGoing = models.filter{ $0.name != "Ali"}
+            self.onGoing = models.filter{ $0.finished != "finish"}
             
             DispatchQueue.main.async {
                 self.onGoingTable.reloadData()

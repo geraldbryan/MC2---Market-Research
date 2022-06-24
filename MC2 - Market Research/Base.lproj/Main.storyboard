@@ -86,19 +86,7 @@
                             <constraint firstItem="oDz-7e-gDN" firstAttribute="top" secondItem="epo-At-jBO" secondAttribute="top" id="kTs-bZ-XRf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IjA-qW-QQw">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="ePF-KR-atR">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ae6-Jp-wfa">
-                                <rect key="frame" x="288" y="5" width="86" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
-                            </button>
-                            <connections>
-                                <action selector="editButton:" destination="PNq-E0-k4w" id="atO-uh-bGw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="IjA-qW-QQw"/>
                     <connections>
                         <outlet property="finishButton" destination="om5-Qa-Kqd" id="oQE-SH-Ive"/>
                         <outlet property="researchProjectTableView" destination="oDz-7e-gDN" id="mJu-Cj-DUi"/>
