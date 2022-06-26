@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 import CoreData
+import UserNotifications
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -15,12 +16,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Core data configuration
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    // Initiate variabel for core data
     private var models = [Research]()
     private var filtered = [Research]()
     private var onGoing = [Research]()
     private var result = [ResearchResult]()
     private var filterResult = [ResearchResult]()
     
+    // Initiate IBOutlet
     @IBOutlet var tableView: UITableView!
     @IBOutlet var prevTableView: UITableView!
     @IBOutlet var quoteImage: UIImageView!
@@ -32,20 +35,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var emptyAll: UIView!
     @IBOutlet var emptyAllImage: UIImageView!
     
+    //Initiate variable for image carousel
     let images = ["motivation2.png","motivation1.png","motivation3.png"]
+    
+    //Initiate variable for data passing
     var indexTwo = 0
     var indexThree = 0
     
     override func viewDidAppear(_ animated: Bool) {
         getAllItems()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Configure title for this page
         title = "Home"
         
+        // Initiate empty state image
         emptyImage.image = UIImage(named: "empty_ongoing.png")
         emptyAllImage.image = UIImage(named: "empty_state.png")
-        //deleteAllData("Research")
         
         // Image Carousel
         self.pageControl.numberOfPages = images.count
@@ -71,10 +80,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        deleteAllData("Dummy")
 //        deleteAllData("ResearchResult")
         
-        // Do any additional setup after loading the view
-        
     }
     
+    // Function for image carousel
     var index = 0
     @objc func update()  {
         index = index + 1
@@ -86,7 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         pageControl.currentPage = index
     }
     
-    //delete all research data
+    //delete all research data - development used only
     func deleteAllData(_ entity:String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         fetchRequest.returnsObjectsAsFaults = false
@@ -115,12 +123,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Core data funtion
     func getAllItems(){
         do{
+            // fetching core data of Research entity dand ResearchResult entity
             models = try context.fetch(Research.fetchRequest())
             result = try context.fetch(ResearchResult.fetchRequest())
             
+            // filtering core data for finished table view and on going project table view
             self.filtered = models.filter{ $0.finished == "finish"}
             self.onGoing = models.filter{ $0.finished != "finish"}
             
+            // Reload table view
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -129,6 +140,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.prevTableView.reloadData()
             }
             
+            // logic for empty state
             if onGoing.count == 0{
                 emptyOnGoing.isHidden = false
                 emptyOnGoing2.isHidden = false
@@ -154,6 +166,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    //delete core data item
     func deleteItem(item:Research){
         context.delete(item)
         
@@ -164,8 +177,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    // Table view funtion
+    // Table view function
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // isi untuk ongoing table view
         if tableView == tableView,
            let cell = tableView.dequeueReusableCell(withIdentifier: "item_cell") as? TableViewCell {
             
@@ -184,10 +198,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let progStr = String(round((Float(filterResult.count) / Float(5)) * Float(100)))
             cell.progressText?.text = "\(progStr)%"
-            print("\(progStr)%")
+            
             return cell
             
-        } else if tableView == prevTableView,
+        } else if tableView == prevTableView, // isi untuk finished project table view
                   let cell = tableView.dequeueReusableCell(withIdentifier: "prev_cell") as? previousTableViewCell {
             
             let model = filtered.reversed()[indexPath.row]
@@ -200,6 +214,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return UITableViewCell()
     }
     
+    // mengatur jumlah cell per table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count:Int?
         
@@ -222,6 +237,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return count!
     }
     
+    // mengatur tinggi per cell di masing-masing table view
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var tinggi:CGFloat?
         
@@ -236,6 +252,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return tinggi!
     }
     
+    // mengatur clickable cell per masing-masing table view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         if tableView == self.tableView{
             self.indexTwo = indexPath.row
@@ -247,6 +264,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    // nmengatur segue dan passing data per masing-masing segue identifier
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "klikCell"{
             if let dest = segue.destination as? ResearchProgressController{
@@ -267,6 +285,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
+    
+    // Performing segue
     @IBAction func tapOnGoing(){
         performSegue(withIdentifier: "onGoingSegue", sender: self)
     }
@@ -282,9 +302,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func newResearch(){
         performSegue(withIdentifier: "emptyNew", sender: self)
     }
-    
-    @IBAction func unwindToHome(_ seg: UIStoryboardSegue) {
-            getAllItems()
-        }
     
 }
