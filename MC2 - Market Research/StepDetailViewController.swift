@@ -188,7 +188,7 @@ extension StepDetailViewController: StepResultTextViewDelegate{
 // MARK: Keyboard
 extension StepDetailViewController {
     @objc func keyboardWillShow(sender: NSNotification) {
-        view.frame.origin.y = view.frame.origin.y - 135
+        view.frame.origin.y = view.frame.origin.y - 210
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
