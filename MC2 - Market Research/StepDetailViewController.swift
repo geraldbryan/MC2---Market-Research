@@ -27,6 +27,7 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         view.addGestureRecognizer(tap)
         
         getAllItems()
+        setupKeyboardHiding()
         self.title = step.stepName
         finishButton.isEnabled = false
         
@@ -152,6 +153,11 @@ class StepDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             
         }
     }
+    
+    private func setupKeyboardHiding() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 }
 
 
@@ -176,5 +182,16 @@ extension StepDetailViewController: StepResultTextViewDelegate{
             finishButton.isEnabled = true
         }
         stepResult = text
+    }
+}
+
+// MARK: Keyboard
+extension StepDetailViewController {
+    @objc func keyboardWillShow(sender: NSNotification) {
+        view.frame.origin.y = view.frame.origin.y - 135
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        view.frame.origin.y = 0
     }
 }
