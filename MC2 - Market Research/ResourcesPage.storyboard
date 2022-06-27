@@ -139,16 +139,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coming Soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo8-XZ-QjS">
-                                <rect key="frame" x="153" y="438" width="108" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="WfQ-NT-sOk">
+                                <rect key="frame" x="20" y="342" width="374" height="256"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PTf-xa-rOT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WfQ-NT-sOk" firstAttribute="top" secondItem="PTf-xa-rOT" secondAttribute="top" constant="298" id="EWr-wJ-DY5"/>
+                            <constraint firstItem="WfQ-NT-sOk" firstAttribute="leading" secondItem="PTf-xa-rOT" secondAttribute="leading" constant="20" id="PdL-ZP-n8X"/>
+                            <constraint firstItem="PTf-xa-rOT" firstAttribute="trailing" secondItem="WfQ-NT-sOk" secondAttribute="trailing" constant="20" id="b2T-hL-oeX"/>
+                            <constraint firstItem="PTf-xa-rOT" firstAttribute="bottom" secondItem="WfQ-NT-sOk" secondAttribute="bottom" constant="264" id="lYD-Fx-5Wv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsA-hr-biw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,6 +159,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="335" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

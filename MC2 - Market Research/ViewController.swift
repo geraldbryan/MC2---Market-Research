@@ -303,4 +303,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         performSegue(withIdentifier: "emptyNew", sender: self)
     }
     
+    @IBAction func unwindToHome(_ seg: UIStoryboardSegue) {
+                 getAllItems()
+             }
+    
 }

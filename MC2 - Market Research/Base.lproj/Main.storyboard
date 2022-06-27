@@ -327,7 +327,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" borderStyle="line" placeholder="e.g. Determine the factors people like crispy chicken.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-0Y-Es4">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="line" placeholder="e.g. Determine the factors people like crispy chicken.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-0Y-Es4">
                                 <rect key="frame" x="20" y="202.66666666666666" width="350" height="26.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" smartDashesType="yes"/>
@@ -557,7 +557,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zaY-e3-Iyg"/>
-        <segue reference="bZ3-Je-dBS"/>
+        <segue reference="af5-E9-Y6U"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>

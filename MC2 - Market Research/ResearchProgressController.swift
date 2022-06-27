@@ -51,6 +51,7 @@ class ResearchProgressController: UIViewController, UITableViewDataSource, UITab
         let index = finished.firstIndex(where: {$0.id == resId})
         updateItem(item: finished[index ?? 0], fin: "finish")
         performSegue(withIdentifier: "unwindToHome", sender: self)
+        print("finish")
     }
     
     override func viewDidAppear(_ animated: Bool) {
