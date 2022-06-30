@@ -163,6 +163,111 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		267423F4286C5EC60075DE9C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				26EC2368285F6FDC000C333B /* ResourcesPage.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		267423F5286C5ECF0075DE9C /* Table Cells Xib */ = {
+			isa = PBXGroup;
+			children = (
+				267423FD286D8A340075DE9C /* Resources */,
+				267423FB286D89B80075DE9C /* Step Detail */,
+				267423FA286D88CF0075DE9C /* Finished Research */,
+				267423F9286D88C60075DE9C /* On Going Research */,
+				267423F8286D888E0075DE9C /* Research Progress */,
+				267423F7286D88830075DE9C /* New Research */,
+				267423F6286C5FCA0075DE9C /* Main Page */,
+			);
+			path = "Table Cells Xib";
+			sourceTree = "<group>";
+		};
+		267423F6286C5FCA0075DE9C /* Main Page */ = {
+			isa = PBXGroup;
+			children = (
+				90CCD54D28545D6D008D4F9A /* TableViewCell.xib */,
+				90CCD54C28545D6D008D4F9A /* TableViewCell.swift */,
+				90CCD5642858E51C008D4F9A /* previousTableViewCell.xib */,
+				90CCD5632858E51B008D4F9A /* previousTableViewCell.swift */,
+			);
+			path = "Main Page";
+			sourceTree = "<group>";
+		};
+		267423F7286D88830075DE9C /* New Research */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Research";
+			sourceTree = "<group>";
+		};
+		267423F8286D888E0075DE9C /* Research Progress */ = {
+			isa = PBXGroup;
+			children = (
+				09A8B3B5285737E200BB99CA /* ResearchProjectCell.xib */,
+				09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */,
+				09039A4F285B263B00156FF3 /* nameObjectiveCell.xib */,
+				09039A4E285B263B00156FF3 /* nameObjectiveCell.swift */,
+			);
+			path = "Research Progress";
+			sourceTree = "<group>";
+		};
+		267423F9286D88C60075DE9C /* On Going Research */ = {
+			isa = PBXGroup;
+			children = (
+				90CCD56A285A30FE008D4F9A /* onGoingTableViewCell.xib */,
+				90CCD569285A30FE008D4F9A /* onGoingTableViewCell.swift */,
+			);
+			path = "On Going Research";
+			sourceTree = "<group>";
+		};
+		267423FA286D88CF0075DE9C /* Finished Research */ = {
+			isa = PBXGroup;
+			children = (
+				90719C00285AD47300AAB3CC /* finishedTableViewCell.xib */,
+				90719BFF285AD47300AAB3CC /* finishedTableViewCell.swift */,
+			);
+			path = "Finished Research";
+			sourceTree = "<group>";
+		};
+		267423FB286D89B80075DE9C /* Step Detail */ = {
+			isa = PBXGroup;
+			children = (
+				267423FC286D8A040075DE9C /* Collection View */,
+				26AF7F68285F4D8100EF601E /* StepDescriptionTableViewCell.xib */,
+				26AF7F67285F4D8100EF601E /* StepDescriptionTableViewCell.swift */,
+				26AF7F70285F509D00EF601E /* ToolsAndResourcesTableViewCell.xib */,
+				26AF7F6F285F509C00EF601E /* ToolsAndResourcesTableViewCell.swift */,
+				26EC2356285F5701000C333B /* StepResultTableViewCell.xib */,
+				26EC2355285F5701000C333B /* StepResultTableViewCell.swift */,
+				26AF05BD285F73660021D06F /* StepImageTableViewCell.xib */,
+				26AF05BC285F73660021D06F /* StepImageTableViewCell.swift */,
+			);
+			path = "Step Detail";
+			sourceTree = "<group>";
+		};
+		267423FC286D8A040075DE9C /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				26AF7F63285F4D5700EF601E /* ToolsAndResourcesCollectionViewCell.swift */,
+				26AF7F64285F4D5700EF601E /* ToolsAndResourcesCollectionViewCell.xib */,
+			);
+			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		267423FD286D8A340075DE9C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26EC235F285F677B000C333B /* ResourceHeadingTableViewCell.xib */,
+				26EC235E285F677B000C333B /* ResourceHeadingTableViewCell.swift */,
+				26EC2363285F6DD9000C333B /* ResourceOneParagraphTableViewCell.xib */,
+				26EC2362285F6DD9000C333B /* ResourceOneParagraphTableViewCell.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		90A2DE81284E533D00B8F876 = {
 			isa = PBXGroup;
 			children = (
@@ -191,46 +296,10 @@
 				90CCD54928545CDD008D4F9A /* Controller */,
 				90A2DE8D284E533D00B8F876 /* AppDelegate.swift */,
 				90A2DE8F284E533D00B8F876 /* SceneDelegate.swift */,
-				90A2DE91284E533D00B8F876 /* ViewController.swift */,
-				90CCD5632858E51B008D4F9A /* previousTableViewCell.swift */,
-				90CCD5642858E51C008D4F9A /* previousTableViewCell.xib */,
-				90CCD5552854CB85008D4F9A /* NewResearch.swift */,
 				90A2DE93284E533D00B8F876 /* Main.storyboard */,
-				90719BFF285AD47300AAB3CC /* finishedTableViewCell.swift */,
-				90719C00285AD47300AAB3CC /* finishedTableViewCell.xib */,
-				90719BFD285AD41200AAB3CC /* finishedResearchedViewController.swift */,
-				90CCD569285A30FE008D4F9A /* onGoingTableViewCell.swift */,
-				90CCD56A285A30FE008D4F9A /* onGoingTableViewCell.xib */,
-				90CCD567285A305A008D4F9A /* onGoingResearchControllerViewController.swift */,
-				09A8B3B82857415900BB99CA /* ResearchProgressController.swift */,
-				09A8B3B4285737E200BB99CA /* ResearchProjectCell.swift */,
-				09A8B3B5285737E200BB99CA /* ResearchProjectCell.xib */,
-				09039A4E285B263B00156FF3 /* nameObjectiveCell.swift */,
-				09039A4F285B263B00156FF3 /* nameObjectiveCell.xib */,
-				90CCD54C28545D6D008D4F9A /* TableViewCell.swift */,
-				90CCD54D28545D6D008D4F9A /* TableViewCell.xib */,
 				90A2DE99284E534000B8F876 /* Assets.xcassets */,
 				90A2DE9B284E534000B8F876 /* LaunchScreen.storyboard */,
 				90A2DE9E284E534000B8F876 /* Info.plist */,
-				26AF7F59285F4C0900EF601E /* StepDetailViewController.swift */,
-				26AF7F67285F4D8100EF601E /* StepDescriptionTableViewCell.swift */,
-				26AF7F68285F4D8100EF601E /* StepDescriptionTableViewCell.xib */,
-				26AF7F63285F4D5700EF601E /* ToolsAndResourcesCollectionViewCell.swift */,
-				26AF7F64285F4D5700EF601E /* ToolsAndResourcesCollectionViewCell.xib */,
-				26AF7F6F285F509C00EF601E /* ToolsAndResourcesTableViewCell.swift */,
-				26AF7F70285F509D00EF601E /* ToolsAndResourcesTableViewCell.xib */,
-				26EC2355285F5701000C333B /* StepResultTableViewCell.swift */,
-				26EC2356285F5701000C333B /* StepResultTableViewCell.xib */,
-				26AF05BC285F73660021D06F /* StepImageTableViewCell.swift */,
-				26AF05BD285F73660021D06F /* StepImageTableViewCell.xib */,
-				26EC235C285F6690000C333B /* ResourcesViewController.swift */,
-				26EC235E285F677B000C333B /* ResourceHeadingTableViewCell.swift */,
-				26EC235F285F677B000C333B /* ResourceHeadingTableViewCell.xib */,
-				26EC2362285F6DD9000C333B /* ResourceOneParagraphTableViewCell.swift */,
-				26EC2363285F6DD9000C333B /* ResourceOneParagraphTableViewCell.xib */,
-				26EC2368285F6FDC000C333B /* ResourcesPage.storyboard */,
-				9002E7D928621E43008A1C27 /* demographicViewController.swift */,
-				0941B78528622E2D0007775E /* UserPersonaPage.swift */,
 			);
 			path = "MC2 - Market Research";
 			sourceTree = "<group>";
@@ -264,6 +333,15 @@
 		90CCD54928545CDD008D4F9A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				90A2DE91284E533D00B8F876 /* ViewController.swift */,
+				26EC235C285F6690000C333B /* ResourcesViewController.swift */,
+				0941B78528622E2D0007775E /* UserPersonaPage.swift */,
+				9002E7D928621E43008A1C27 /* demographicViewController.swift */,
+				90719BFD285AD41200AAB3CC /* finishedResearchedViewController.swift */,
+				90CCD567285A305A008D4F9A /* onGoingResearchControllerViewController.swift */,
+				09A8B3B82857415900BB99CA /* ResearchProgressController.swift */,
+				90CCD5552854CB85008D4F9A /* NewResearch.swift */,
+				26AF7F59285F4C0900EF601E /* StepDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +364,8 @@
 		90CCD54B28545D12008D4F9A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				267423F5286C5ECF0075DE9C /* Table Cells Xib */,
+				267423F4286C5EC60075DE9C /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
